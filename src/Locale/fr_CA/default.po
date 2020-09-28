@@ -1,0 +1,495 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-09-23 23:23+0000\n"
+"PO-Revision-Date: 2020-09-27 10:33-0400\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: \n"
+"Language: fr_CA\n"
+
+#: Controller/CommentsController.php:86
+msgid "Comment must be added from an task"
+msgstr "Le commentaire doit être ajouté à partir d'un tâche"
+
+#: Controller/CommentsController.php:97 Controller/CommentsController.php:125
+msgid "The comment has been saved."
+msgstr "Ce commentaire à été sauvegardé."
+
+#: Controller/CommentsController.php:102 Controller/CommentsController.php:129
+msgid "The comment could not be saved. Please, try again."
+msgstr "Ce commentaire n'a pas pu été sauvegarder. Essayer à nouveau."
+
+#: Controller/CommentsController.php:147
+msgid "The comment has been deleted."
+msgstr "Ce commentaire à été supprimer."
+
+#: Controller/CommentsController.php:149
+msgid "The comment could not be deleted. Please, try again."
+msgstr ""
+"Ce commentaire n'a pas plus été supprimé. S'il vous plait, essayé à nouveau."
+
+#: Controller/PhotosController.php:57 Controller/PhotosController.php:82
+msgid "The photo has been saved."
+msgstr "Cette photo à été sauvegardée."
+
+#: Controller/PhotosController.php:61 Controller/PhotosController.php:86
+msgid "The photo could not be saved. Please, try again."
+msgstr "La photo n'a pas été sauvegarder. S'il vous plait, essayé encore."
+
+#: Controller/PhotosController.php:104
+msgid "The photo has been deleted."
+msgstr "La photo à bien été supprimé."
+
+#: Controller/PhotosController.php:106
+msgid "The photo could not be deleted. Please, try again."
+msgstr "La photo n'a pas été supprimé. S'il vous plait, essayé encore."
+
+#: Controller/RolesController.php:54 Controller/RolesController.php:78
+msgid "The role has been saved."
+msgstr "Le rôle à bien été sauvegarder."
+
+#: Controller/RolesController.php:58 Controller/RolesController.php:82
+msgid "The role could not be saved. Please, try again."
+msgstr "Le rôle n'a pas été sauvegarder. S'il vous plait, essayer encore."
+
+#: Controller/RolesController.php:99
+msgid "The role has been deleted."
+msgstr "Le rôle à été supprimé."
+
+#: Controller/RolesController.php:101
+msgid "The role could not be deleted. Please, try again."
+msgstr "Le rôle n'a pas été supprimé. S'il vous plait, essayer encore."
+
+#: Controller/TasksController.php:84 Controller/TasksController.php:108
+msgid "The task has been saved."
+msgstr "La tâche a bien été sauvegardé."
+
+#: Controller/TasksController.php:88 Controller/TasksController.php:112
+msgid "The task could not be saved. Please, try again."
+msgstr "La tâche n'a pas été sauvegarder. S'il vous plait, essayer encore."
+
+#: Controller/TasksController.php:129
+msgid "The task has been deleted."
+msgstr "La tâche a bien été supprimé."
+
+#: Controller/TasksController.php:131
+msgid "The task could not be deleted. Please, try again."
+msgstr "La tâche n'a pas été supprimé. S'il vous plait, essayer encore."
+
+#: Controller/UsersController.php:79 Controller/UsersController.php:104
+msgid "The user has been saved."
+msgstr "L'utilisateur a bien été sauvegardé."
+
+#: Controller/UsersController.php:83 Controller/UsersController.php:108
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+"L'utilisateur n'a pas été sauvegarder. S'il vous plait, essayer encore."
+
+#: Controller/UsersController.php:126
+msgid "The user has been deleted."
+msgstr "L'utilisateur à bien été supprimé."
+
+#: Controller/UsersController.php:128
+msgid "The user could not be deleted. Please, try again."
+msgstr "L'utilisateur n'a pas été supprimé. S'il vous plait, essayer encore."
+
+#: Template/Comments/add.ctp:9 Template/Comments/edit.ctp:9
+#: Template/Comments/index.ctp:9 Template/Comments/index.ctp:23
+#: Template/Comments/view.ctp:9 Template/Photos/add.ctp:9
+#: Template/Photos/edit.ctp:9 Template/Photos/index.ctp:9
+#: Template/Photos/index.ctp:26 Template/Photos/view.ctp:9
+#: Template/Roles/add.ctp:9 Template/Roles/edit.ctp:9
+#: Template/Roles/index.ctp:9 Template/Roles/index.ctp:22
+#: Template/Roles/view.ctp:9 Template/Roles/view.ctp:50
+#: Template/Tasks/add.ctp:9 Template/Tasks/edit.ctp:9
+#: Template/Tasks/index.ctp:9 Template/Tasks/view.ctp:9
+#: Template/Tasks/view.ctp:61 Template/Users/add.ctp:9
+#: Template/Users/edit.ctp:9 Template/Users/index.ctp:9
+#: Template/Users/view.ctp:9 Template/Users/view.ctp:74
+msgid "Actions"
+msgstr ""
+
+#: Template/Comments/add.ctp:10 Template/Comments/edit.ctp:16
+#: Template/Comments/view.ctp:12
+msgid "List Comments"
+msgstr "Liste de commentaires"
+
+#: Template/Comments/add.ctp:16
+msgid "Add Comment"
+msgstr "Ajout d'un commentaire"
+
+#: Template/Comments/add.ctp:23 Template/Comments/edit.ctp:29
+#: Template/Photos/add.ctp:27 Template/Photos/edit.ctp:33
+#: Template/Roles/add.ctp:24 Template/Roles/edit.ctp:30
+#: Template/Tasks/add.ctp:28 Template/Tasks/edit.ctp:34
+#: Template/Users/add.ctp:34 Template/Users/edit.ctp:40
+msgid "Submit"
+msgstr "Confirmer"
+
+#: Template/Comments/edit.ctp:11 Template/Comments/index.ctp:37
+#: Template/Photos/edit.ctp:11 Template/Photos/index.ctp:41
+#: Template/Roles/edit.ctp:11 Template/Roles/index.ctp:33
+#: Template/Roles/view.ctp:68 Template/Tasks/edit.ctp:11
+#: Template/Tasks/index.ctp:41 Template/Tasks/view.ctp:74
+#: Template/Users/edit.ctp:11 Template/Users/index.ctp:53
+#: Template/Users/view.ctp:86
+msgid "Delete"
+msgstr "Supprimer"
+
+#: Template/Comments/edit.ctp:13 Template/Comments/index.ctp:37
+#: Template/Comments/view.ctp:11 Template/Photos/edit.ctp:13
+#: Template/Photos/index.ctp:41 Template/Photos/view.ctp:11
+#: Template/Roles/edit.ctp:13 Template/Roles/index.ctp:33
+#: Template/Roles/view.ctp:11 Template/Roles/view.ctp:68
+#: Template/Tasks/edit.ctp:13 Template/Tasks/index.ctp:41
+#: Template/Tasks/view.ctp:11 Template/Tasks/view.ctp:74
+#: Template/Users/edit.ctp:13 Template/Users/index.ctp:53
+#: Template/Users/view.ctp:11 Template/Users/view.ctp:86
+msgid "Are you sure you want to delete # {0}?"
+msgstr "Est-tu sur que tu veux supprimer # {0}?"
+
+#: Template/Comments/edit.ctp:22 Template/Comments/view.ctp:10
+msgid "Edit Comment"
+msgstr "Modifier le commentaire"
+
+#: Template/Comments/index.ctp:10 Template/Comments/view.ctp:13
+#: Template/Tasks/view.ctp:17 Template/Tasks/view.ctp:47
+msgid "New Comment"
+msgstr "Nouveau commentaire"
+
+#: Template/Comments/index.ctp:14
+msgid "Comments"
+msgstr "Commentaires"
+
+#: Template/Comments/index.ctp:35 Template/Photos/index.ctp:39
+#: Template/Roles/index.ctp:31 Template/Roles/view.ctp:66
+#: Template/Tasks/index.ctp:39 Template/Tasks/view.ctp:72
+#: Template/Users/index.ctp:51 Template/Users/view.ctp:84
+msgid "View"
+msgstr "Voir"
+
+#: Template/Comments/index.ctp:36 Template/Photos/index.ctp:40
+#: Template/Roles/index.ctp:32 Template/Roles/view.ctp:67
+#: Template/Tasks/index.ctp:40 Template/Tasks/view.ctp:73
+#: Template/Users/index.ctp:52 Template/Users/view.ctp:85
+msgid "Edit"
+msgstr "Modifier"
+
+#: Template/Comments/index.ctp:45 Template/Photos/index.ctp:49
+#: Template/Roles/index.ctp:41 Template/Tasks/index.ctp:49
+#: Template/Users/index.ctp:61
+msgid "first"
+msgstr "premier"
+
+#: Template/Comments/index.ctp:46 Template/Photos/index.ctp:50
+#: Template/Roles/index.ctp:42 Template/Tasks/index.ctp:50
+#: Template/Users/index.ctp:62
+msgid "previous"
+msgstr "précédent"
+
+#: Template/Comments/index.ctp:48 Template/Photos/index.ctp:52
+#: Template/Roles/index.ctp:44 Template/Tasks/index.ctp:52
+#: Template/Users/index.ctp:64
+msgid "next"
+msgstr "prochain"
+
+#: Template/Comments/index.ctp:49 Template/Photos/index.ctp:53
+#: Template/Roles/index.ctp:45 Template/Tasks/index.ctp:53
+#: Template/Users/index.ctp:65
+msgid "last"
+msgstr "dernier"
+
+#: Template/Comments/index.ctp:51 Template/Photos/index.ctp:55
+#: Template/Roles/index.ctp:47 Template/Tasks/index.ctp:55
+#: Template/Users/index.ctp:67
+msgid ""
+"Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} "
+"total"
+msgstr ""
+
+#: Template/Comments/view.ctp:11
+msgid "Delete Comment"
+msgstr "Supprimer le commentaire"
+
+#: Template/Comments/view.ctp:20 Template/Roles/view.ctp:22
+#: Template/Tasks/view.ctp:57
+msgid "Name"
+msgstr "Nom"
+
+#: Template/Comments/view.ctp:24 Template/Photos/view.ctp:38
+#: Template/Roles/view.ctp:26 Template/Roles/view.ctp:39
+#: Template/Tasks/view.ctp:28 Template/Tasks/view.ctp:55
+#: Template/Users/view.ctp:36 Template/Users/view.ctp:69
+msgid "Id"
+msgstr "Id"
+
+#: Template/Comments/view.ctp:28
+msgid "Task Id"
+msgstr "Tâche id"
+
+#: Template/Comments/view.ctp:32
+msgid "Created"
+msgstr "Créer"
+
+#: Template/Comments/view.ctp:36 Template/Tasks/view.ctp:60
+msgid "Modified"
+msgstr "Modifier"
+
+#: Template/Comments/view.ctp:41 Template/Tasks/view.ctp:58
+msgid "Comment"
+msgstr "Commentaire"
+
+#: Template/Layout/error.ctp:36
+msgid "Error"
+msgstr "Erreur"
+
+#: Template/Layout/error.ctp:44
+msgid "Back"
+msgstr "Retour"
+
+#: Template/Photos/add.ctp:10 Template/Photos/edit.ctp:16
+#: Template/Photos/view.ctp:12 Template/Tasks/add.ctp:13
+#: Template/Tasks/edit.ctp:19 Template/Tasks/index.ctp:13
+msgid "List Photos"
+msgstr "Liste des photos"
+
+#: Template/Photos/add.ctp:11 Template/Photos/edit.ctp:17
+#: Template/Photos/index.ctp:11 Template/Photos/view.ctp:14
+#: Template/Tasks/add.ctp:10 Template/Tasks/edit.ctp:16
+#: Template/Tasks/view.ctp:12 Template/Users/add.ctp:13
+#: Template/Users/edit.ctp:19 Template/Users/index.ctp:13
+#: Template/Users/view.ctp:16
+msgid "List Tasks"
+msgstr "Liste des tâches"
+
+#: Template/Photos/add.ctp:12 Template/Photos/edit.ctp:18
+#: Template/Photos/index.ctp:12 Template/Photos/view.ctp:15
+#: Template/Tasks/index.ctp:10 Template/Tasks/view.ctp:13
+#: Template/Users/add.ctp:14 Template/Users/edit.ctp:20
+#: Template/Users/index.ctp:14 Template/Users/view.ctp:17
+msgid "New Task"
+msgstr "Nouvelle tâche"
+
+#: Template/Photos/add.ctp:18
+msgid "Add Photo"
+msgstr "Ajouté une photo"
+
+#: Template/Photos/edit.ctp:24 Template/Photos/view.ctp:10
+msgid "Edit Photo"
+msgstr "Modifier la photo"
+
+#: Template/Photos/index.ctp:10 Template/Photos/view.ctp:13
+#: Template/Tasks/add.ctp:14 Template/Tasks/edit.ctp:20
+#: Template/Tasks/index.ctp:14
+msgid "New Photo"
+msgstr "Nouvelle photo"
+
+#: Template/Photos/index.ctp:16
+msgid "Photos"
+msgstr "Photos"
+
+#: Template/Photos/view.ctp:11
+msgid "Delete Photo"
+msgstr "Supprimer une photo"
+
+#: Template/Photos/view.ctp:22
+msgid "Title"
+msgstr "Titre"
+
+#: Template/Photos/view.ctp:26
+msgid "Filename"
+msgstr "Nom du fichier"
+
+#: Template/Photos/view.ctp:30
+msgid "Owner"
+msgstr "Propriétaire"
+
+#: Template/Photos/view.ctp:34
+msgid "Task"
+msgstr "Tâche"
+
+#: Template/Photos/view.ctp:42
+msgid "Date"
+msgstr "Date"
+
+#: Template/Roles/add.ctp:10 Template/Roles/edit.ctp:16
+#: Template/Roles/view.ctp:12 Template/Users/add.ctp:11
+#: Template/Users/edit.ctp:17 Template/Users/index.ctp:11
+#: Template/Users/view.ctp:14
+msgid "List Roles"
+msgstr "Liste des rôles"
+
+#: Template/Roles/add.ctp:11 Template/Roles/edit.ctp:17
+#: Template/Roles/index.ctp:11 Template/Roles/view.ctp:14
+#: Template/Tasks/add.ctp:11 Template/Tasks/edit.ctp:17
+#: Template/Tasks/index.ctp:11 Template/Tasks/view.ctp:14
+#: Template/Users/add.ctp:10 Template/Users/edit.ctp:16
+#: Template/Users/view.ctp:12
+msgid "List Users"
+msgstr "List des utilisateurs"
+
+#: Template/Roles/add.ctp:12 Template/Roles/edit.ctp:18
+#: Template/Roles/index.ctp:12 Template/Roles/view.ctp:15
+#: Template/Tasks/add.ctp:12 Template/Tasks/edit.ctp:18
+#: Template/Tasks/index.ctp:12 Template/Tasks/view.ctp:15
+#: Template/Users/index.ctp:10 Template/Users/view.ctp:13
+msgid "New User"
+msgstr "Nouvelle utilisateur"
+
+#: Template/Roles/add.ctp:18
+msgid "Add Role"
+msgstr "Ajout d'un rôle"
+
+#: Template/Roles/edit.ctp:24 Template/Roles/view.ctp:10
+msgid "Edit Role"
+msgstr "Modifier le rôle"
+
+#: Template/Roles/index.ctp:10 Template/Roles/view.ctp:13
+#: Template/Users/add.ctp:12 Template/Users/edit.ctp:18
+#: Template/Users/index.ctp:12 Template/Users/view.ctp:15
+msgid "New Role"
+msgstr "Nouveau rôle"
+
+#: Template/Roles/index.ctp:16
+msgid "Roles"
+msgstr "Rôles"
+
+#: Template/Roles/view.ctp:11
+msgid "Delete Role"
+msgstr "Supprimer le rôle"
+
+#: Template/Roles/view.ctp:31
+msgid "Description"
+msgstr "Description"
+
+#: Template/Roles/view.ctp:35
+msgid "Related Users"
+msgstr ""
+
+#: Template/Roles/view.ctp:40 Template/Users/view.ctp:24
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: Template/Roles/view.ctp:41
+msgid "Password"
+msgstr "Mot de passe"
+
+#: Template/Roles/view.ctp:42 Template/Users/view.ctp:49
+msgid "First Name"
+msgstr "Prénom"
+
+#: Template/Roles/view.ctp:43 Template/Users/view.ctp:53
+msgid "Last Name"
+msgstr "Nom"
+
+#: Template/Roles/view.ctp:44 Template/Users/view.ctp:28
+msgid "Gender"
+msgstr "Sexe"
+
+#: Template/Roles/view.ctp:45 Template/Users/view.ctp:57
+msgid "Email"
+msgstr "Courriel"
+
+#: Template/Roles/view.ctp:46 Template/Users/view.ctp:40
+msgid "Date Creation"
+msgstr "Date de création"
+
+#: Template/Roles/view.ctp:47 Template/Users/view.ctp:44
+msgid "Date Modified"
+msgstr "Date de modification"
+
+#: Template/Roles/view.ctp:48 Template/Users/view.ctp:61
+msgid "Other Information"
+msgstr "Autre information"
+
+#: Template/Roles/view.ctp:49
+msgid "Role Id"
+msgstr "Rôle Id"
+
+#: Template/Tasks/add.ctp:20
+msgid "Add Task"
+msgstr "Ajout d'un tâche"
+
+#: Template/Tasks/edit.ctp:26 Template/Tasks/view.ctp:10
+msgid "Edit Task"
+msgstr "Modifier une tâche"
+
+#: Template/Tasks/index.ctp:18
+msgid "Tasks"
+msgstr "Tâche"
+
+#: Template/Tasks/view.ctp:11
+msgid "Delete Task"
+msgstr "Supprimer une tâche"
+
+#: Template/Tasks/view.ctp:16
+msgid "List of comments"
+msgstr "Liste des commentaires"
+
+#: Template/Tasks/view.ctp:24
+msgid "User"
+msgstr "Utilisateur"
+
+#: Template/Tasks/view.ctp:32 Template/Users/view.ctp:70
+msgid "Start Date"
+msgstr "Date de début"
+
+#: Template/Tasks/view.ctp:36 Template/Users/view.ctp:71
+msgid "End Date"
+msgstr "Date de fin"
+
+#: Template/Tasks/view.ctp:40
+msgid "Information task"
+msgstr "Information de la task"
+
+#: Template/Tasks/view.ctp:51
+msgid "Related Comments"
+msgstr ""
+
+#: Template/Tasks/view.ctp:56
+msgid "Task id"
+msgstr "Tâche Id"
+
+#: Template/Tasks/view.ctp:59
+msgid "created"
+msgstr "créer"
+
+#: Template/Users/add.ctp:20
+msgid "Add User"
+msgstr "Créer un utilisateur"
+
+#: Template/Users/edit.ctp:26 Template/Users/view.ctp:10
+msgid "Edit User"
+msgstr "Modifier un utilisateur"
+
+#: Template/Users/index.ctp:18
+msgid "Users"
+msgstr "Utilisateurs"
+
+#: Template/Users/view.ctp:11
+msgid "Delete User"
+msgstr "Supprimer un utilisateur"
+
+#: Template/Users/view.ctp:32
+msgid "Role"
+msgstr "Rôle"
+
+#: Template/Users/view.ctp:65
+msgid "Related Tasks"
+msgstr ""
+
+#: Template/Users/view.ctp:72
+msgid "Information Task"
+msgstr "Information sur la task"
+
+#: Template/Users/view.ctp:73
+msgid "User Id"
+msgstr "Utilisateur Id"
