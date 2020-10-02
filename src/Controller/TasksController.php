@@ -60,6 +60,14 @@ class TasksController extends AppController {
             }
             $this->Flash->error(__('The task could not be saved. Please, try again.'));
         }
+        // Get a list of tags.
+        $tags = $this->Tasks->Tags->find('list');
+
+        // Set tags to the view context
+        $this->set('tags', $tags);
+        $this->set('task', $task);
+
+
         $users = $this->Tasks->Users->find('list', ['limit' => 200]);
         $this->set(compact('task', 'users'));
     }
@@ -84,8 +92,19 @@ class TasksController extends AppController {
             }
             $this->Flash->error(__('The task could not be saved. Please, try again.'));
         }
+
+        // Get a list of tags.
+        $tags = $this->Tasks->Tags->find('list');
+
+        // Set tags to the view context
+        $this->set('tags', $tags);
+
+        $this->set('task', $task);
+
+
         $users = $this->Tasks->Users->find('list', ['limit' => 200]);
         $this->set(compact('task', 'users'));
+
     }
 
     /**

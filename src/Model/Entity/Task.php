@@ -33,5 +33,7 @@ class Task extends Entity
         'user_id' => true,
         'user' => true,
         'photos' => true,
+        'comments' => true,
+        'tags' => true,
     ];
 }
