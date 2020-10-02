@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 01 oct. 2020 à 22:04
+-- Généré le :  ven. 02 oct. 2020 à 18:35
 -- Version du serveur :  10.3.17-MariaDB
 -- Version de PHP :  7.3.9
 
@@ -47,6 +47,29 @@ INSERT INTO `comments` (`id`, `task_id`, `name`, `comment`, `created`, `modified
 (3, 1, 'admin', 'I want to add a comment', '2020-09-18', '2020-09-28'),
 (11, 1, 'Jessy', 'This is a comment', '2020-09-21', '2020-09-28'),
 (13, 1, 'Fred', 'Can you this as soon as possible', '2020-09-22', '2020-09-28');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `files`
+--
+
+CREATE TABLE `files` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `path` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1 = Active, 0 = Inactive'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Déchargement des données de la table `files`
+--
+
+INSERT INTO `files` (`id`, `name`, `path`, `created`, `modified`, `status`) VALUES
+(1, 'helfenburk_shody.jpg', 'files/add/', '2020-09-27 00:00:00', '2020-09-27 00:00:00', 1),
+(2, 'bezdez_uvnitr.jpg', 'files/add/', '2020-09-28 01:50:46', '2020-09-28 01:50:46', 1);
 
 -- --------------------------------------------------------
 
