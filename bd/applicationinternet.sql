@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 02 oct. 2020 à 18:35
+-- Généré le :  Dim 04 oct. 2020 à 00:27
 -- Version du serveur :  10.3.17-MariaDB
--- Version de PHP :  7.3.9
+-- Version de PHP :  7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -198,6 +198,28 @@ INSERT INTO `tasks` (`id`, `start_date`, `end_date`, `information_task`, `forUse
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `tasks_files`
+--
+
+CREATE TABLE `tasks_files` (
+  `id` int(11) NOT NULL,
+  `task_id` int(11) NOT NULL,
+  `file_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `tasks_files`
+--
+
+INSERT INTO `tasks_files` (`id`, `task_id`, `file_id`) VALUES
+(1, 1, 1),
+(3, 7, 1),
+(4, 7, 2),
+(2, 13, 2);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `tasks_tags`
 --
 
@@ -257,6 +279,12 @@ ALTER TABLE `comments`
   ADD KEY `article_id` (`task_id`);
 
 --
+-- Index pour la table `files`
+--
+ALTER TABLE `files`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `i18n`
 --
 ALTER TABLE `i18n`
@@ -292,6 +320,15 @@ ALTER TABLE `tasks`
   ADD KEY `user_id` (`user_id`);
 
 --
+-- Index pour la table `tasks_files`
+--
+ALTER TABLE `tasks_files`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `article_id` (`task_id`,`file_id`),
+  ADD KEY `file_id` (`file_id`),
+  ADD KEY `task_id` (`task_id`);
+
+--
 -- Index pour la table `tasks_tags`
 --
 ALTER TABLE `tasks_tags`
@@ -315,6 +352,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT pour la table `files`
+--
+ALTER TABLE `files`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `i18n`
@@ -341,6 +384,12 @@ ALTER TABLE `tasks`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT pour la table `tasks_files`
+--
+ALTER TABLE `tasks_files`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
@@ -355,6 +404,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`task_id`) REFERENCES `tasks` (`id`);
+
+--
+-- Contraintes pour la table `files`
+--
+ALTER TABLE `files`
+  ADD CONSTRAINT `files_ibfk_1` FOREIGN KEY (`id`) REFERENCES `tasks_files` (`file_id`);
 
 --
 -- Contraintes pour la table `photos`
