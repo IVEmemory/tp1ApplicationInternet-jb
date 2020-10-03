@@ -73,7 +73,7 @@ class FilesController extends AppController
                 $this->Flash->error(__('Please choose a file to upload.'));
             }
         }
-        $articles = $this->Files->Tasks->find('list', ['limit' => 200]);
+        $tasks = $this->Files->Tasks->find('list', ['limit' => 200]);
         $this->set(compact('file', 'tasks'));
     }
 

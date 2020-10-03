@@ -43,7 +43,7 @@
                     <td><?= h($file->status) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $file->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $file->id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $file->id]) ?>             
     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $file->id], ['confirm' => __('Are you sure you want to delete # {0}?', $file->id)]) ?>
                     </td>
                 </tr>
