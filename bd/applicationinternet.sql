@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 04 oct. 2020 à 00:27
+-- Généré le :  lun. 05 oct. 2020 à 17:54
 -- Version du serveur :  10.3.17-MariaDB
--- Version de PHP :  7.3.8
+-- Version de PHP :  7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -69,7 +69,7 @@ CREATE TABLE `files` (
 
 INSERT INTO `files` (`id`, `name`, `path`, `created`, `modified`, `status`) VALUES
 (1, 'helfenburk_shody.jpg', 'files/add/', '2020-09-27 00:00:00', '2020-09-27 00:00:00', 1),
-(2, 'bezdez_uvnitr.jpg', 'files/add/', '2020-09-28 01:50:46', '2020-09-28 01:50:46', 1);
+(3, 'JessyPicture.jpg', 'files/add/', '2020-10-05 13:42:34', '2020-10-05 13:42:34', 1);
 
 -- --------------------------------------------------------
 
@@ -213,9 +213,7 @@ CREATE TABLE `tasks_files` (
 
 INSERT INTO `tasks_files` (`id`, `task_id`, `file_id`) VALUES
 (1, 1, 1),
-(3, 7, 1),
-(4, 7, 2),
-(2, 13, 2);
+(3, 7, 1);
 
 -- --------------------------------------------------------
 
@@ -324,9 +322,8 @@ ALTER TABLE `tasks`
 --
 ALTER TABLE `tasks_files`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `article_id` (`task_id`,`file_id`),
-  ADD KEY `file_id` (`file_id`),
-  ADD KEY `task_id` (`task_id`);
+  ADD KEY `task_id` (`task_id`),
+  ADD KEY `file_id` (`file_id`);
 
 --
 -- Index pour la table `tasks_tags`
@@ -406,12 +403,6 @@ ALTER TABLE `comments`
   ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`task_id`) REFERENCES `tasks` (`id`);
 
 --
--- Contraintes pour la table `files`
---
-ALTER TABLE `files`
-  ADD CONSTRAINT `files_ibfk_1` FOREIGN KEY (`id`) REFERENCES `tasks_files` (`file_id`);
-
---
 -- Contraintes pour la table `photos`
 --
 ALTER TABLE `photos`
@@ -422,6 +413,12 @@ ALTER TABLE `photos`
 --
 ALTER TABLE `tasks`
   ADD CONSTRAINT `tasks_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Contraintes pour la table `tasks_files`
+--
+ALTER TABLE `tasks_files`
+  ADD CONSTRAINT `tasks_files_ibfk_1` FOREIGN KEY (`file_id`) REFERENCES `files` (`id`);
 
 --
 -- Contraintes pour la table `tasks_tags`
