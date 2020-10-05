@@ -183,8 +183,7 @@ return [
         'log' => true,
         'trace' => true,
     ],
-
-    /*
+     /**
      * Email configuration.
      *
      * By defining transports separately from delivery profiles you can easily
@@ -207,23 +206,32 @@ return [
         'default' => [
             'className' => MailTransport::class,
             /*
-             * The keys host, port, timeout, username, password, client and tls
-             * are used in SMTP transports
+             * The following keys are used in SMTP transports:
              */
             'host' => 'localhost',
             'port' => 25,
             'timeout' => 30,
-            /*
-             * It is recommended to set these options through your environment or app_local.php
-             */
-            //'username' => null,
-            //'password' => null,
+            'username' => null,
+            'password' => null,
             'client' => null,
-            'tls' => false,
+            'tls' => null,
             'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
         ],
+        'davmail' => [
+            'host' => 'localhost',
+            'port' => 1025,
+            'username' => '1794297@cmontmorency.qc.ca',
+            'password' => 'cfgjkoudvyylgrji',
+            'className' => 'Smtp'
+        ],
+        'gmail' => [
+            'host' => 'ssl://smtp.gmail.com',
+            'port' => 465,
+            'username' => 'jessy2540@gmail.com',
+            'password' => 'cfgjkoudvyylgrji',
+            'className' => 'Smtp'
+        ]
     ],
-
     /*
      * Email delivery profiles
      *
@@ -235,8 +243,8 @@ return [
      */
     'Email' => [
         'default' => [
-            'transport' => 'default',
-            'from' => 'you@localhost',
+            'transport' => 'gmail',
+            'from' => 'jessy2540@gmail.com',
             /*
              * Will by default be set to config value of App.encoding, if that exists otherwise to UTF-8.
              */
