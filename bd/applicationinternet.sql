@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 05 oct. 2020 à 17:54
+-- Généré le :  mer. 14 oct. 2020 à 18:54
 -- Version du serveur :  10.3.17-MariaDB
 -- Version de PHP :  7.3.9
 
@@ -34,19 +34,20 @@ CREATE TABLE `comments` (
   `name` varchar(255) NOT NULL,
   `comment` text NOT NULL,
   `created` date NOT NULL,
-  `modified` date DEFAULT NULL
+  `modified` date DEFAULT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `comments`
 --
 
-INSERT INTO `comments` (`id`, `task_id`, `name`, `comment`, `created`, `modified`) VALUES
-(1, 1, 'admin', 'There was a mess of milk in the fridge, task to execute in a bigger time', '2020-09-18', '2020-09-28'),
-(2, 1, 'Raphael', 'This is a comment', '2020-09-18', '2020-09-28'),
-(3, 1, 'admin', 'I want to add a comment', '2020-09-18', '2020-09-28'),
-(11, 1, 'Jessy', 'This is a comment', '2020-09-21', '2020-09-28'),
-(13, 1, 'Fred', 'Can you this as soon as possible', '2020-09-22', '2020-09-28');
+INSERT INTO `comments` (`id`, `task_id`, `name`, `comment`, `created`, `modified`, `user_id`) VALUES
+(1, 1, 'admin', 'There was a mess of milk in the fridge, task to execute in a bigger time', '2020-09-18', '2020-09-28', 0),
+(2, 1, 'Raphael', 'This is a comment', '2020-09-18', '2020-09-28', 0),
+(3, 1, 'admin', 'I want to add a comment', '2020-09-18', '2020-09-28', 0),
+(11, 1, 'Jessy', 'This is a comment', '2020-09-21', '2020-09-28', 0),
+(13, 1, 'Fred', 'Can you this as soon as possible', '2020-09-22', '2020-09-28', 0);
 
 -- --------------------------------------------------------
 
@@ -107,7 +108,8 @@ INSERT INTO `i18n` (`id`, `locale`, `model`, `foreign_key`, `field`, `content`) 
 (14, 'es_US', 'Comments', 13, 'comment', 'Kannst du das so schnell wie möglich'),
 (15, 'fr_CA', 'Comments', 11, 'comment', 'Ceci est un commentaire'),
 (16, 'fr_CA', 'Comments', 13, 'comment', 'Pouvez-vous faire cela dès que possible'),
-(17, 'fr_CA', 'Comments', 3, 'comment', 'Je veux ajouter un commentaire');
+(17, 'fr_CA', 'Comments', 3, 'comment', 'Je veux ajouter un commentaire'),
+(18, 'fr_CA', 'Tasks', 2, 'information_task', 'Ceci est un test');
 
 -- --------------------------------------------------------
 
@@ -147,7 +149,8 @@ INSERT INTO `roles` (`id`, `name`, `description`, `created`, `modified`) VALUES
 (1, 'Administrateur', 'L\'administrateur est en réalité le propriétaire du site web. Il a le plein contrôle.\r\n\r\nIl peut donner des tâches et modifier les utilisateurs', '0000-00-00', '0000-00-00'),
 (2, 'Superviseur', 'Le superviseur s\'assure de superviser la déroulement des tâches.\r\n\r\nIl peut modifier les tâches et en crée.\r\n\r\nNe peux pas modifier les utilisateurs.', '0000-00-00', '0000-00-00'),
 (3, 'Employée', 'L\'employée est la personne qui reçois les tâches, il doit s\'assurer qu\'avant la fin de la journée, tout est fini.', '0000-00-00', '0000-00-00'),
-(4, 'Visiteur', 'Le visiteur est un grade provisoire pour la sécurité. Il ne peut pas voir les tâches temps qu\'il n\'est pas approuvé par l\'administrateur au sein des employées.', '0000-00-00', '0000-00-00');
+(4, 'Visiteur', 'Le visiteur est un grade provisoire pour la sécurité. Il ne peut pas voir les tâches temps qu\'il n\'est pas approuvé par l\'administrateur au sein des employées.', '0000-00-00', '0000-00-00'),
+(5, 'Super-admin', 'L\'un des propiétaire du site web.\r\n\r\nIl peut envoyer des email au utilisateur pour confirmer leurs inscriptions.', '2020-10-14', NULL);
 
 -- --------------------------------------------------------
 
@@ -192,7 +195,7 @@ CREATE TABLE `tasks` (
 
 INSERT INTO `tasks` (`id`, `start_date`, `end_date`, `information_task`, `forUser`, `user_id`) VALUES
 (1, '2020-09-15', '2020-09-22', 'Full the fridge of milk', 1, 4),
-(2, '2020-09-18', '2020-10-18', 'Ceci est un test', 1, 5),
+(2, '2020-09-18', '2020-10-18', 'This is a test', 1, 5),
 (3, '2020-09-21', '2020-09-22', 'This task is a task to do as soon as possible', 1, 4);
 
 -- --------------------------------------------------------
@@ -261,9 +264,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `gender`, `email`, `created`, `modified`, `other_information`, `role_id`) VALUES
-(1, 'IVEmemory', '$2y$10$DsuWfbnYyN27kbXP03IOwePsYMrZw5fUf1BXvNyYnz6WHutpL.hAy', 'Jessy', 'Berube', 'Mâle', 'jessy2540@hotmail.com', '2020-09-15', NULL, 'Je suis étudiant au collège Montmorency Laval', 1),
 (4, 'admin', '$2y$10$CZl89odjm3A9IC5MaIv/yuh.uCzZ9AkxlaLjKC46a6ILg9cBqvFcq', 'admin', 'admin', 'male', 'admin@admin.com', '2020-09-17', NULL, 'admin', 1),
-(5, 'Rapahel', '$2y$10$9gzkrTiEn/mc6ius3/VigOCT6qU9aRaF7DiBAP7blEroXPzA2CNja', 'Raphael', 'Raphael', 'Mâle', 'raphael@hotmail.com', '2020-09-18', NULL, 'Je suis Raphael', 3);
+(5, 'Rapahel', '$2y$10$9gzkrTiEn/mc6ius3/VigOCT6qU9aRaF7DiBAP7blEroXPzA2CNja', 'Raphael', 'Raphael', 'Mâle', 'raphael@hotmail.com', '2020-09-18', '2020-10-14', 'Je suis Raphael', 3);
 
 --
 -- Index pour les tables déchargées
@@ -274,7 +276,9 @@ INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `g
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `article_id` (`task_id`);
+  ADD KEY `article_id` (`task_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `user_id_2` (`user_id`);
 
 --
 -- Index pour la table `files`
@@ -360,7 +364,7 @@ ALTER TABLE `files`
 -- AUTO_INCREMENT pour la table `i18n`
 --
 ALTER TABLE `i18n`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `roles`
@@ -403,12 +407,6 @@ ALTER TABLE `comments`
   ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`task_id`) REFERENCES `tasks` (`id`);
 
 --
--- Contraintes pour la table `photos`
---
-ALTER TABLE `photos`
-  ADD CONSTRAINT `photos_ibfk_1` FOREIGN KEY (`task_id`) REFERENCES `tasks` (`id`);
-
---
 -- Contraintes pour la table `tasks`
 --
 ALTER TABLE `tasks`
@@ -418,7 +416,8 @@ ALTER TABLE `tasks`
 -- Contraintes pour la table `tasks_files`
 --
 ALTER TABLE `tasks_files`
-  ADD CONSTRAINT `tasks_files_ibfk_1` FOREIGN KEY (`file_id`) REFERENCES `files` (`id`);
+  ADD CONSTRAINT `tasks_files_ibfk_1` FOREIGN KEY (`file_id`) REFERENCES `files` (`id`),
+  ADD CONSTRAINT `tasks_files_ibfk_2` FOREIGN KEY (`id`) REFERENCES `tasks` (`id`);
 
 --
 -- Contraintes pour la table `tasks_tags`

@@ -40,6 +40,10 @@
             <th scope="row"><?= __('Information task') ?></th>
             <td><?= h($task->information_task) ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('Picture') ?></th>
+            <td><?= h($tasks_file->file_id) ?></td>
+        </tr>
     </table>
     <?php
         $this->request->session()->write('Task.id', $task->id);

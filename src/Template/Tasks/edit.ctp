@@ -28,7 +28,6 @@
             echo $this->Form->control('start_date');
             echo $this->Form->control('end_date');
             echo $this->Form->control('information_task');
-            echo $this->Form->control('user_id', ['options' => $users]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

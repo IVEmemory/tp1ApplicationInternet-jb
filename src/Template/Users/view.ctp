@@ -33,10 +33,6 @@
             <td><?= $user->has('role') ? $this->Html->link($user->role->name, ['controller' => 'Roles', 'action' => 'view', $user->role->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($user->id) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Date Creation') ?></th>
             <td><?= h($user->date_creation) ?></td>
         </tr>

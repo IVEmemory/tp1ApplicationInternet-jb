@@ -36,32 +36,26 @@
         <?php if (!empty($role->users)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
-                <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Username') ?></th>
-                <th scope="col"><?= __('Password') ?></th>
                 <th scope="col"><?= __('First Name') ?></th>
                 <th scope="col"><?= __('Last Name') ?></th>
                 <th scope="col"><?= __('Gender') ?></th>
                 <th scope="col"><?= __('Email') ?></th>
                 <th scope="col"><?= __('Date Creation') ?></th>
-                <th scope="col"><?= __('Date Modified') ?></th>
                 <th scope="col"><?= __('Other Information') ?></th>
                 <th scope="col"><?= __('Role Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($role->users as $users): ?>
             <tr>
-                <td><?= h($users->id) ?></td>
                 <td><?= h($users->username) ?></td>
-                <td><?= h($users->password) ?></td>
                 <td><?= h($users->first_name) ?></td>
                 <td><?= h($users->last_name) ?></td>
                 <td><?= h($users->gender) ?></td>
                 <td><?= h($users->email) ?></td>
                 <td><?= h($users->date_creation) ?></td>
-                <td><?= h($users->date_modified) ?></td>
                 <td><?= h($users->other_information) ?></td>
-                <td><?= h($users->role_id) ?></td>
+                <td><?= h($role->name) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Users', 'action' => 'view', $users->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Users', 'action' => 'edit', $users->id]) ?>
