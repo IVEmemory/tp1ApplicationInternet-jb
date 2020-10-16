@@ -31,5 +31,6 @@ class File extends Entity
         'created' => true,
         'modified' => true,
         'status' => true,
+        'tasks' => true,
     ];
 }

@@ -151,4 +151,31 @@ class CommentsController extends AppController
 
         return $this->redirect(['controller' => 'tasks', 'action' => 'view', $comment->task_id]);
     }
+
+    public function isAuthorized($user)
+    {
+        
+        $action = $this->request->getParam('action');
+        
+    
+        // All other actions require a id.
+        $id = $this->request->getParam('pass.0');
+        if (!$id) {
+            return false;
+        }
+    
+        // Check that the task belongs to the current user.
+        $comment = $this->Comments->get($id);
+
+
+        if($comment->user_id == $user['id']){
+            return true;
+        }
+
+    
+        return $comment->user_id === $user['id'];
+        
+    
+        
+    }
 }

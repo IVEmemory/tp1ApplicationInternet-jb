@@ -220,7 +220,7 @@ return [
         'davmail' => [
             'host' => 'localhost',
             'port' => 1025,
-            'username' => 'ivememory@cmontmorency.qc.ca',
+            'username' => '1794297@cmontmorency.qc.ca',
             'password' => 'cfgjkoudvyylgrji',
             'className' => 'Smtp'
         ],

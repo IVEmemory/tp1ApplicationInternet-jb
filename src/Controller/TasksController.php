@@ -20,7 +20,7 @@ class TasksController extends AppController {
      */
     public function index() {
         $this->paginate = [
-            'contain' => ['Users'],
+            'contain' => ['Users', 'Files'],
         ];
         $tasks = $this->paginate($this->Tasks);
 
@@ -142,6 +142,10 @@ class TasksController extends AppController {
 
     // Check that the task belongs to the current user.
     $task = $this->Tasks->get($id);
+
+    if($user['role_id'] === 1){
+        return true;
+    }
 
     return $task->user_id === $user['id'];
 }

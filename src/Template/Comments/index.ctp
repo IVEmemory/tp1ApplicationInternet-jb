@@ -9,6 +9,8 @@
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('List of tasks'), ['controller' => 'Tasks', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Task'), ['controller' => 'Tasks', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List of comments'), ['controller' => 'Comments', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List of Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List of Files'), ['controller' => 'Files', 'action' => 'index']) ?></li>
     </ul>
 </nav>

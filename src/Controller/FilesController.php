@@ -34,7 +34,7 @@ class FilesController extends AppController
     public function view($id = null)
     {
         $file = $this->Files->get($id, [
-            'contain' => [],
+            'contain' => ['Tasks'],
         ]);
 
         $this->set('file', $file);
@@ -87,7 +87,7 @@ class FilesController extends AppController
     public function edit($id = null)
     {
         $file = $this->Files->get($id, [
-            'contain' => [],
+            'contain' => ['Tasks'],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $file = $this->Files->patchEntity($file, $this->request->getData());
@@ -98,6 +98,7 @@ class FilesController extends AppController
             }
             $this->Flash->error(__('The file could not be saved. Please, try again.'));
         }
+        $tasks = $this->Files->Tasks->find('list', ['limit' => 200]);
         $this->set(compact('file'));
     }
 

@@ -55,7 +55,6 @@
                     <th scope="col"><?= __('Id') ?></th>
                     <th scope="col"><?= __('User Id') ?></th>
                     <th scope="col"><?= __('Title') ?></th>
-                    <th scope="col"><?= __('Slug') ?></th>
                     <th scope="col"><?= __('Body') ?></th>
                     <th scope="col"><?= __('Published') ?></th>
                     <th scope="col"><?= __('Created') ?></th>
@@ -67,7 +66,6 @@
                         <td><?= h($tasks->id) ?></td>
                         <td><?= h($tasks->user_id) ?></td>
                         <td><?= h($tasks->title) ?></td>
-                        <td><?= h($tasks->slug) ?></td>
                         <td><?= h($tasks->body) ?></td>
                         <td><?= h($tasks->published) ?></td>
                         <td><?= h($tasks->created) ?></td>

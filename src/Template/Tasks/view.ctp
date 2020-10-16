@@ -15,6 +15,8 @@
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List of comments'), ['controller' => 'Comments', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Comment'), ['controller' => 'Comments', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Files'), ['controller' => 'Files', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New File'), ['controller' => 'Files', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="tasks view large-9 medium-8 columns content">
@@ -39,10 +41,6 @@
         <tr>
             <th scope="row"><?= __('Information task') ?></th>
             <td><?= h($task->information_task) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Picture') ?></th>
-            <td><?= h($tasks_file->file_id) ?></td>
         </tr>
     </table>
     <?php

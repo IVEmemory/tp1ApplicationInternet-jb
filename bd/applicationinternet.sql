@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 14 oct. 2020 à 18:54
+-- Généré le :  ven. 16 oct. 2020 à 22:16
 -- Version du serveur :  10.3.17-MariaDB
 -- Version de PHP :  7.3.9
 
@@ -43,9 +43,9 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `task_id`, `name`, `comment`, `created`, `modified`, `user_id`) VALUES
-(1, 1, 'admin', 'There was a mess of milk in the fridge, task to execute in a bigger time', '2020-09-18', '2020-09-28', 0),
-(2, 1, 'Raphael', 'This is a comment', '2020-09-18', '2020-09-28', 0),
-(3, 1, 'admin', 'I want to add a comment', '2020-09-18', '2020-09-28', 0),
+(1, 1, 'admin', 'There was a mess of milk in the fridge, task to execute in a bigger time', '2020-09-18', '2020-09-28', 4),
+(2, 1, 'Raphael', 'This is a comment', '2020-09-18', '2020-09-28', 5),
+(3, 1, 'admin', 'I want to add a comment', '2020-09-18', '2020-09-28', 4),
 (11, 1, 'Jessy', 'This is a comment', '2020-09-21', '2020-09-28', 0),
 (13, 1, 'Fred', 'Can you this as soon as possible', '2020-09-22', '2020-09-28', 0);
 
