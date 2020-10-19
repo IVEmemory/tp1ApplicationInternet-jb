@@ -32,7 +32,7 @@ class Task extends Entity
         'information_task' => true,
         'user_id' => true,
         'user' => true,
-        'photos' => true,
+        'files' => true,
         'comments' => true,
         'tags' => true,
     ];

@@ -62,10 +62,11 @@ class TasksController extends AppController {
         }
         // Get a list of tags.
         $tags = $this->Tasks->Tags->find('list');
-
+        $files = $this->Tasks->Files->find('list');
         // Set tags to the view context
         $this->set('tags', $tags);
-        $this->set('task', $task);
+        $this->set('files', $files);
+        //$this->set('task', $task);
 
 
         $users = $this->Tasks->Users->find('list', ['limit' => 200]);

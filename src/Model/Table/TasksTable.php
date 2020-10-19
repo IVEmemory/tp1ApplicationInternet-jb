@@ -28,9 +28,6 @@ class TasksTable extends Table
             'foreignKey' => 'user_id',
             'joinType' => 'INNER',
         ]);
-        $this->hasMany('Photos', [
-            'foreignKey' => 'task_id',
-        ]);
         $this->hasMany('Comments', [
             'foreignKey' => 'task_id',
         ]);

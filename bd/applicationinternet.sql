@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 16 oct. 2020 à 22:16
+-- Généré le :  lun. 19 oct. 2020 à 16:24
 -- Version du serveur :  10.3.17-MariaDB
 -- Version de PHP :  7.3.9
 
@@ -215,8 +215,7 @@ CREATE TABLE `tasks_files` (
 --
 
 INSERT INTO `tasks_files` (`id`, `task_id`, `file_id`) VALUES
-(1, 1, 1),
-(3, 7, 1);
+(1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -417,7 +416,7 @@ ALTER TABLE `tasks`
 --
 ALTER TABLE `tasks_files`
   ADD CONSTRAINT `tasks_files_ibfk_1` FOREIGN KEY (`file_id`) REFERENCES `files` (`id`),
-  ADD CONSTRAINT `tasks_files_ibfk_2` FOREIGN KEY (`id`) REFERENCES `tasks` (`id`);
+  ADD CONSTRAINT `tasks_files_ibfk_3` FOREIGN KEY (`task_id`) REFERENCES `tasks` (`id`);
 
 --
 -- Contraintes pour la table `tasks_tags`
