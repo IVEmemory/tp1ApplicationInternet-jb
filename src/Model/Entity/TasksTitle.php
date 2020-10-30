@@ -8,7 +8,6 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $tasks_title_id
- * @property string $comments_task_id
  * @property string $kod
  * @property string $title
  *
@@ -29,7 +28,6 @@ class TasksTitle extends Entity
      */
     protected $_accessible = [
         'tasks_title_id' => true,
-        'comments_task_id' => true,
         'kod' => true,
         'title' => true,
         'task' => true,

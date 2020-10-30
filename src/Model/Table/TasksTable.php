@@ -31,6 +31,9 @@ class TasksTable extends Table
         $this->hasMany('Comments', [
             'foreignKey' => 'task_id',
         ]);
+        $this->hasMany('Tasks_title', [
+            'foreignKey' => 'task_title_id',
+        ]);
         $this->belongsToMany('Tags', [
             'foreignKey' => 'task_id',
             'targetForeignKey' => 'tag_id',

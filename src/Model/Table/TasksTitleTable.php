@@ -42,10 +42,6 @@ class TasksTitleTable extends Table
             'foreignKey' => 'tasks_title_id',
             'joinType' => 'INNER',
         ]);
-        $this->belongsTo('CommentsTasks', [
-            'foreignKey' => 'comments_task_id',
-            'joinType' => 'INNER',
-        ]);
         $this->hasMany('TasksTitle', [
             'foreignKey' => 'tasks_title_id',
         ]);
@@ -87,7 +83,6 @@ class TasksTitleTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['tasks_title_id'], 'Tasks'));
-        $rules->add($rules->existsIn(['comments_task_id'], 'CommentsTasks'));
 
         return $rules;
     }

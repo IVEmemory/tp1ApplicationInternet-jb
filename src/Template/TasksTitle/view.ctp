@@ -34,10 +34,6 @@
         </tr>
     </table>
     <div class="row">
-        <h4><?= __('Comments Task Id') ?></h4>
-        <?= $this->Text->autoParagraph(h($tasksTitle->comments_task_id)); ?>
-    </div>
-    <div class="row">
         <h4><?= __('Title') ?></h4>
         <?= $this->Text->autoParagraph(h($tasksTitle->title)); ?>
     </div>
@@ -57,7 +53,6 @@
             <tr>
                 <td><?= h($tasksTitle->id) ?></td>
                 <td><?= h($tasksTitle->tasks_title_id) ?></td>
-                <td><?= h($tasksTitle->comments_task_id) ?></td>
                 <td><?= h($tasksTitle->kod) ?></td>
                 <td><?= h($tasksTitle->title) ?></td>
                 <td class="actions">

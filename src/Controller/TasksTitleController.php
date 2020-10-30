@@ -12,6 +12,34 @@ use App\Controller\AppController;
  */
 class TasksTitleController extends AppController
 {
+    public function initialize() {
+        parent::initialize();
+        $this->Auth->allow(['findtasksTitle', 'add', 'edit', 'delete']);
+    }
+
+    /**
+     * findObecCity method
+     * for use with JQuery-UI Autocomplete
+     *
+     * @return JSon query result
+     */
+    public function findtasksTitle() {
+
+        if ($this->request->is('ajax')) {
+
+            $this->autoRender = false;
+            $name = $this->request->query['term'];
+            $results = $this->TasksTitle->find('all', array(
+                'conditions' => array('TasksTitle.title LIKE ' => '%' . $name . '%')
+            ));
+
+            $resultArr = array();
+            foreach ($results as $result) {
+                $resultArr[] = array('label' => $result['title'], 'value' => $result['id']);
+            }
+            echo json_encode($resultArr);
+        }
+    }
     /**
      * Index method
      *

@@ -20,7 +20,6 @@
         <legend><?= __('Add Tasks Title') ?></legend>
         <?php
             echo $this->Form->control('tasks_title_id', ['options' => $tasks]);
-            echo $this->Form->control('comments_task_id');
             echo $this->Form->control('kod');
             echo $this->Form->control('title');
         ?>
