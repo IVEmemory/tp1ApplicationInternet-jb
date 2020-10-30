@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 19 oct. 2020 à 16:24
+-- Généré le :  ven. 30 oct. 2020 à 15:35
 -- Version du serveur :  10.3.17-MariaDB
 -- Version de PHP :  7.3.9
 
@@ -241,6 +241,19 @@ INSERT INTO `tasks_tags` (`task_id`, `tag_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `tasks_title`
+--
+
+CREATE TABLE `tasks_title` (
+  `id` int(11) NOT NULL,
+  `tasks_title_id` int(11) NOT NULL,
+  `kod` varchar(11) NOT NULL,
+  `title` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `users`
 --
 
@@ -337,6 +350,13 @@ ALTER TABLE `tasks_tags`
   ADD KEY `task_id` (`task_id`);
 
 --
+-- Index pour la table `tasks_title`
+--
+ALTER TABLE `tasks_title`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `tasks_title_id` (`tasks_title_id`);
+
+--
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
@@ -390,6 +410,12 @@ ALTER TABLE `tasks_files`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT pour la table `tasks_title`
+--
+ALTER TABLE `tasks_title`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
@@ -423,6 +449,12 @@ ALTER TABLE `tasks_files`
 --
 ALTER TABLE `tasks_tags`
   ADD CONSTRAINT `tasks_tags_ibfk_1` FOREIGN KEY (`tag_id`) REFERENCES `tags` (`id`);
+
+--
+-- Contraintes pour la table `tasks_title`
+--
+ALTER TABLE `tasks_title`
+  ADD CONSTRAINT `tasks_title_ibfk_1` FOREIGN KEY (`tasks_title_id`) REFERENCES `tasks` (`id`);
 
 --
 -- Contraintes pour la table `users`
