@@ -28,6 +28,10 @@ class TasksTable extends Table
             'foreignKey' => 'user_id',
             'joinType' => 'INNER',
         ]);
+        $this->belongsTo('ObecCities', [
+            'foreignKey' => 'obec_city_id',
+            'joinType' => 'INNER',
+        ]);
         $this->hasMany('Comments', [
             'foreignKey' => 'task_id',
         ]);

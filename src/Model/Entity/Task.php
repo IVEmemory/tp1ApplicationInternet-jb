@@ -24,12 +24,13 @@ class Task extends Entity
      * be mass assigned. For security purposes, it is advised to set '*' to false
      * (or remove it), and explicitly make individual fields accessible as needed.
      *
-     * @var array
+     * @var array 
      */
     protected $_accessible = [
         'start_date' => true,
         'end_date' => true,
         'information_task' => true,
+        'obec_city_id' => true,
         'user_id' => true,
         'user' => true,
         'files' => true,
