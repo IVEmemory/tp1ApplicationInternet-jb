@@ -75,7 +75,7 @@ class ObecCitiesController extends AppController
     public function edit($id = null)
     {
         $obecCity = $this->ObecCities->get($id, [
-            'contain' => [],
+            'contain' => ['KrajRegions', 'OkresCounties'],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $obecCity = $this->ObecCities->patchEntity($obecCity, $this->request->getData());

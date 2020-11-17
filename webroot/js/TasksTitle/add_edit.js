@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // The path to action from CakePHP is in urlToLinkedListFilter 
-    $('#kraj-region-id').on('change', function () {
+    $('#kraj-region-id').change(function () {
         var krajRegionId = $(this).val();
         if (krajRegionId) {
             $.ajax({
@@ -20,7 +20,7 @@ $(document).ready(function () {
         } else {
             $('#okres-county-id').html('<option value="">Select KrajRegion first</option>');
         }
-    });
+    }).change();
 });
 
 

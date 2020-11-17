@@ -82,7 +82,7 @@ class TasksController extends AppController {
      */
     public function edit($id = null) {
         $task = $this->Tasks->get($id, [
-            'contain' => [],
+            'contain' => ['ObecCities'],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $task = $this->Tasks->patchEntity($task, $this->request->getData());

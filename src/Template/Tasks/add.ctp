@@ -31,14 +31,15 @@ echo $this->Html->script('Tasks/add_edit/obecCityAutocomplete', ['block' => 'scr
             echo $this->Form->control('start_date');
             echo $this->Form->control('end_date');
             echo $this->Form->control('obec_city_id', ['label' => '(obec_city_id)', 'type' => 'hidden']);
+            //echo $this->Form->control('tasks_id', ['label' => '(tasks_id)', 'type' => 'hidden']);
         ?>
         <div class="input text"> 
-            <label for="autocomplete"><?= __("City"). ' (' . __ ('Autocomplete') . ')' ?></label>
+            <label for="autocomplete"><?= __("Task title"). ' (' . __ ('Autocomplete') . ')' ?></label>
             <input id="autocomplete" type="text">
         </div>
         <?php   
             echo $this->Form->control('information_task');
-            echo $this->Form->control('task_title_id', ['label' => __('TaskTitle') . ' (' . __('Autocomplete demo') . ')', 'type' => 'text', 'id' => 'autocomplete']);
+            //echo $this->Form->control('task_title_id', ['label' => __('TaskTitle') . ' (' . __('Autocomplete demo') . ')', 'type' => 'text', 'id' => 'autocomplete']);
             echo $this->Form->control('files._ids', ['options' => $files]);
         ?>
     </fieldset>

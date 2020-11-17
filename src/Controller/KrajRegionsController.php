@@ -12,6 +12,12 @@ use App\Controller\AppController;
  */
 class KrajRegionsController extends AppController
 {
+
+    public function initialize() {
+        parent::initialize();
+        $this->Auth->allow(['getByKrajRegion', 'add', 'edit', 'delete']);
+    }
+
     /**
      * Index method
      *
@@ -19,8 +25,9 @@ class KrajRegionsController extends AppController
      */
     public function index()
     {
-        $krajRegions = $this->paginate($this->KrajRegions);
-
+        $this->viewBuilder()->setLayout('krajRegionsSpa');
+        $krajRegions = $this->KrajRegions->find('all');
+//        $krajRegions = $this->paginate($this->KrajRegions);
         $this->set(compact('krajRegions'));
     }
 
