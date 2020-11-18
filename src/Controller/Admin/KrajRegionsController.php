@@ -1,7 +1,8 @@
 <?php
-namespace App\Controller;
 
-use App\Controller\AppController;
+namespace App\Controller\Admin;
+
+use App\Controller\Admin\AppController;
 
 /**
  * KrajRegions Controller
@@ -10,12 +11,11 @@ use App\Controller\AppController;
  *
  * @method \App\Model\Entity\KrajRegion[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class KrajRegionsController extends AppController
-{
+class KrajRegionsController extends AppController {
 
     public function initialize() {
         parent::initialize();
-        $this->Auth->allow(['getByKrajRegion', 'add', 'edit', 'delete']);
+//        $this->viewBuilder()->setLayout('cakephp_default');
     }
 
     /**
@@ -23,11 +23,9 @@ class KrajRegionsController extends AppController
      *
      * @return \Cake\Http\Response|null
      */
-    public function index()
-    {
-        $this->viewBuilder()->setLayout('krajRegionsSpa');
-        $krajRegions = $this->KrajRegions->find('all');
-//        $krajRegions = $this->paginate($this->KrajRegions);
+    public function index() {
+        $krajRegions = $this->paginate($this->KrajRegions);
+
         $this->set(compact('krajRegions'));
     }
 
@@ -38,22 +36,20 @@ class KrajRegionsController extends AppController
      * @return \Cake\Http\Response|null
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-/*    public function view($id = null)
-    {
+    public function view($id = null) {
         $krajRegion = $this->KrajRegions->get($id, [
             'contain' => ['ObecCities', 'OkresCounties'],
         ]);
 
         $this->set('krajRegion', $krajRegion);
     }
-*/
+
     /**
      * Add method
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
-/*    public function add()
-    {
+    public function add() {
         $krajRegion = $this->KrajRegions->newEntity();
         if ($this->request->is('post')) {
             $krajRegion = $this->KrajRegions->patchEntity($krajRegion, $this->request->getData());
@@ -66,7 +62,7 @@ class KrajRegionsController extends AppController
         }
         $this->set(compact('krajRegion'));
     }
-*/
+
     /**
      * Edit method
      *
@@ -74,8 +70,7 @@ class KrajRegionsController extends AppController
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-/*    public function edit($id = null)
-    {
+    public function edit($id = null) {
         $krajRegion = $this->KrajRegions->get($id, [
             'contain' => [],
         ]);
@@ -90,7 +85,7 @@ class KrajRegionsController extends AppController
         }
         $this->set(compact('krajRegion'));
     }
-*/
+
     /**
      * Delete method
      *
@@ -98,8 +93,7 @@ class KrajRegionsController extends AppController
      * @return \Cake\Http\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-/*    public function delete($id = null)
-    {
+    public function delete($id = null) {
         $this->request->allowMethod(['post', 'delete']);
         $krajRegion = $this->KrajRegions->get($id);
         if ($this->KrajRegions->delete($krajRegion)) {
@@ -109,5 +103,6 @@ class KrajRegionsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
-    }*/
+    }
+
 }

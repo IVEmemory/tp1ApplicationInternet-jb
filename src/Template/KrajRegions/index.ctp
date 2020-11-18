@@ -6,10 +6,10 @@ echo $this->Html->script('KrajRegions/index', ['block' => 'scriptBottom']);
         <div class="container">
             <div class="row">
                 <div class="col-md-12 head">
-                    <h5>Regions (Kraje)</h5>
+                    <h5>Tâches possible</h5>
                     <!-- Add link -->
                     <div class="float-right">
-                        <a href="javascript:void(0);" class="btn btn-success" data-type="add" data-toggle="modal" data-target="#modalKrajRegionAddEdit"><i class="plus"></i> New region (kraj)</a>
+                        <a href="javascript:void(0);" class="btn btn-success" data-type="add" data-toggle="modal" data-target="#modalKrajRegionAddEdit"><i class="plus"></i> Nouvelle tâche vague </a>
                     </div>
                 </div>
                 <div class="statusMsg"></div>
@@ -18,8 +18,8 @@ echo $this->Html->script('KrajRegions/index', ['block' => 'scriptBottom']);
                     <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
-                            <th>Name (nazev)</th>
-                            <th>Code (kod)</th>
+                            <th>Tâche vague</th>
+                            <th>Code de tâche</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -45,7 +45,7 @@ echo $this->Html->script('KrajRegions/index', ['block' => 'scriptBottom']);
                                 </tr>
                             <?php }
                         } else { ?>
-                            <tr><td colspan="5">No region (kraj) found...</td></tr>
+                            <tr><td colspan="5">aucune tâche vague trouvé...</td></tr>
 <?php } ?>
                     </tbody>
                 </table>
@@ -69,11 +69,11 @@ echo $this->Html->script('KrajRegions/index', ['block' => 'scriptBottom']);
                         <div class="statusMsg"></div>
                         <form role="form">
                             <div class="form-group">
-                                <label for="nazev">Name (nazev)</label>
+                                <label for="nazev">Nom de la tâche vague</label>
                                 <input type="text" class="form-control" name="nazev" id="nazev" placeholder="Enter the name (nazev)">
                             </div>
                             <div class="form-group">
-                                <label for="kod">Code (kod)</label>
+                                <label for="kod">Code de la tâche</label>
                                 <input type="text" class="form-control" name="kod" id="kod" placeholder="Enter the code (kod)">
                             </div>
                             <input type="hidden" class="form-control" name="id" id="id"/>

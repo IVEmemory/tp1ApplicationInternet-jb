@@ -13,6 +13,7 @@
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Files'), ['controller' => 'Files', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New File'), ['controller' => 'Files', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Liste de tâche 2.0'), ['controller' => 'KrajRegions', 'action' => 'index']) ?> </li>
         
     </ul>
 </nav>

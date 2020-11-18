@@ -7,25 +7,24 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Kraj Region'), ['action' => 'edit', $krajRegion->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Kraj Region'), ['action' => 'delete', $krajRegion->id], ['confirm' => __('Are you sure you want to delete # {0}?', $krajRegion->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Kraj Regions'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Kraj Region'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Obec Cities'), ['controller' => 'ObecCities', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Obec City'), ['controller' => 'ObecCities', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Okres Counties'), ['controller' => 'OkresCounties', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Okres County'), ['controller' => 'OkresCounties', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('New Task'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List of comments'), ['controller' => 'Comments', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Files'), ['controller' => 'Files', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New File'), ['controller' => 'Files', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Liste de tâche 2.0'), ['controller' => 'KrajRegions', 'action' => 'index']) ?> </li>
     </ul>
 </nav>
 <div class="krajRegions view large-9 medium-8 columns content">
     <h3><?= h($krajRegion->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Kod') ?></th>
+            <th scope="row"><?= __('Code de tâche') ?></th>
             <td><?= h($krajRegion->kod) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Nazev') ?></th>
+            <th scope="row"><?= __('Tâche vague') ?></th>
             <td><?= h($krajRegion->nazev) ?></td>
         </tr>
         <tr>
@@ -39,10 +38,10 @@
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Kraj Region Id') ?></th>
-                <th scope="col"><?= __('Okres County Id') ?></th>
-                <th scope="col"><?= __('Kod') ?></th>
-                <th scope="col"><?= __('Nazev') ?></th>
+                <th scope="col"><?= __('tâche vague Id') ?></th>
+                <th scope="col"><?= __('emplacement tâche Id') ?></th>
+                <th scope="col"><?= __('Code de tâche') ?></th>
+                <th scope="col"><?= __('Tâche vague') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($krajRegion->obec_cities as $obecCities): ?>
