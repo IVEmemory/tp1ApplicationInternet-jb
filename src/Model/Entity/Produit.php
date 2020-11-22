@@ -7,13 +7,13 @@ use Cake\ORM\Entity;
  * KrajRegion Entity
  *
  * @property int $id
- * @property string $kod
- * @property string $nazev
+ * @property string $code
+ * @property string $actionPro
  *
- * @property \App\Model\Entity\ObecCity[] $obec_cities
- * @property \App\Model\Entity\OkresCounty[] $okres_counties
+ * @property \App\Model\Entity\ObecCity[] $emplacementProduits
+ * @property \App\Model\Entity\OkresCounty[] $actions
  */
-class KrajRegion extends Entity
+class Produit extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -25,9 +25,9 @@ class KrajRegion extends Entity
      * @var array
      */
     protected $_accessible = [
-        'kod' => true,
-        'nazev' => true,
-        'obec_cities' => true,
-        'okres_counties' => true,
+        'code' => true,
+        'actionPro' => true,
+        'emplacementProduits' => true,
+        'actions' => true,
     ];
 }

@@ -7,10 +7,10 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * KrajRegions Model
+ * Produits Model
  *
- * @property \App\Model\Table\ObecCitiesTable&\Cake\ORM\Association\HasMany $ObecCities
- * @property \App\Model\Table\OkresCountiesTable&\Cake\ORM\Association\HasMany $OkresCounties
+ * @property \App\Model\Table\ObecCitiesTable&\Cake\ORM\Association\HasMany $EmplacementProduits
+ * @property \App\Model\Table\OkresCountiesTable&\Cake\ORM\Association\HasMany $Actions
  *
  * @method \App\Model\Entity\KrajRegion get($primaryKey, $options = [])
  * @method \App\Model\Entity\KrajRegion newEntity($data = null, array $options = [])
@@ -21,7 +21,7 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\KrajRegion[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\KrajRegion findOrCreate($search, callable $callback = null, $options = [])
  */
-class KrajRegionsTable extends Table
+class ProduitsTable extends Table
 {
     /**
      * Initialize method
@@ -33,15 +33,15 @@ class KrajRegionsTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('kraj_regions');
-        $this->setDisplayField('nazev');
+        $this->setTable('produits');
+        $this->setDisplayField('actionPro');
         $this->setPrimaryKey('id');
 
-        $this->hasMany('ObecCities', [
-            'foreignKey' => 'kraj_region_id',
+        $this->hasMany('EmplacementProduits', [
+            'foreignKey' => 'produit_id',
         ]);
-        $this->hasMany('OkresCounties', [
-            'foreignKey' => 'kraj_region_id',
+        $this->hasMany('Actions', [
+            'foreignKey' => 'produit_id',
         ]);
     }
 
@@ -58,16 +58,16 @@ class KrajRegionsTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->scalar('kod')
-            ->maxLength('kod', 7)
-            ->requirePresence('kod', 'create')
-            ->notEmptyString('kod');
+            ->scalar('code')
+            ->maxLength('code', 7)
+            ->requirePresence('code', 'create')
+            ->notEmptyString('code');
 
         $validator
-            ->scalar('nazev')
-            ->maxLength('nazev', 80)
-            ->requirePresence('nazev', 'create')
-            ->notEmptyString('nazev');
+            ->scalar('actionPro')
+            ->maxLength('actionPro', 80)
+            ->requirePresence('actionPro', 'create')
+            ->notEmptyString('actionPro');
 
         return $validator;
     }

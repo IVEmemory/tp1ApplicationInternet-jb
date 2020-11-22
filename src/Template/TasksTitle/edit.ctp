@@ -26,7 +26,7 @@
         <legend><?= __('Edit Tasks Title') ?></legend>
         <?php
             echo $this->Form->control('tasks_title_id', ['options' => $tasks]);
-            echo $this->Form->control('kod');
+            echo $this->Form->control('code');
             echo $this->Form->control('title');
         ?>
     </fieldset>

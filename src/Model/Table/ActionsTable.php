@@ -7,10 +7,10 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * OkresCounties Model
+ * Actions Model
  *
- * @property \App\Model\Table\KrajRegionsTable&\Cake\ORM\Association\BelongsTo $KrajRegions
- * @property \App\Model\Table\ObecCitiesTable&\Cake\ORM\Association\HasMany $ObecCities
+ * @property \App\Model\Table\KrajRegionsTable&\Cake\ORM\Association\BelongsTo $Produits
+ * @property \App\Model\Table\ObecCitiesTable&\Cake\ORM\Association\HasMany $EmplacementProduits
  *
  * @method \App\Model\Entity\OkresCounty get($primaryKey, $options = [])
  * @method \App\Model\Entity\OkresCounty newEntity($data = null, array $options = [])
@@ -21,7 +21,7 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\OkresCounty[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\OkresCounty findOrCreate($search, callable $callback = null, $options = [])
  */
-class OkresCountiesTable extends Table
+class ActionsTable extends Table
 {
     /**
      * Initialize method
@@ -33,16 +33,16 @@ class OkresCountiesTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('okres_counties');
-        $this->setDisplayField('nazev');
+        $this->setTable('actions');
+        $this->setDisplayField('actionPro');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('KrajRegions', [
-            'foreignKey' => 'kraj_region_id',
+        $this->belongsTo('Produits', [
+            'foreignKey' => 'produit_id',
             'joinType' => 'INNER',
         ]);
-        $this->hasMany('ObecCities', [
-            'foreignKey' => 'okres_county_id',
+        $this->hasMany('EmplacementProduits', [
+            'foreignKey' => 'action_id',
         ]);
     }
 
@@ -59,16 +59,16 @@ class OkresCountiesTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->scalar('kod')
-            ->maxLength('kod', 9)
-            ->requirePresence('kod', 'create')
-            ->notEmptyString('kod');
+            ->scalar('code')
+            ->maxLength('code', 9)
+            ->requirePresence('code', 'create')
+            ->notEmptyString('code');
 
         $validator
-            ->scalar('nazev')
-            ->maxLength('nazev', 80)
-            ->requirePresence('nazev', 'create')
-            ->notEmptyString('nazev');
+            ->scalar('actionPro')
+            ->maxLength('actionPro', 80)
+            ->requirePresence('actionPro', 'create')
+            ->notEmptyString('actionPro');
 
         return $validator;
     }
@@ -82,7 +82,7 @@ class OkresCountiesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['kraj_region_id'], 'KrajRegions'));
+        $rules->add($rules->existsIn(['produit_id'], 'Produits'));
 
         return $rules;
     }

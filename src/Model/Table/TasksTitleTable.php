@@ -60,10 +60,10 @@ class TasksTitleTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->scalar('kod')
-            ->maxLength('kod', 11)
-            ->requirePresence('kod', 'create')
-            ->notEmptyString('kod');
+            ->scalar('code')
+            ->maxLength('code', 11)
+            ->requirePresence('code', 'create')
+            ->notEmptyString('code');
 
         $validator
             ->scalar('title')

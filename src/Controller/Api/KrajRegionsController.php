@@ -5,9 +5,9 @@ namespace App\Controller\Api;
 use App\Controller\Api\AppController;
 
 /**
- * KrajRegions Controller
+ * Produits Controller
  *
- * @property \App\Model\Table\KrajRegionsTable $KrajRegions
+ * @property \App\Model\Table\KrajRegionsTable $Produits
  *
  * @method \App\Model\Entity\KrajRegion[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
@@ -21,44 +21,44 @@ class KrajRegionsController extends AppController {
 
     public function index()
     {
-        $krajRegions = $this->KrajRegions->find('all');
+        $produits = $this->Produits->find('all');
         $this->set([
-            'krajRegions' => $krajRegions,
-            '_serialize' => ['krajRegions']
+            'produits' => $produits,
+            '_serialize' => ['produits']
         ]);
     }
 
     public function view($id)
     {
-        $krajRegion = $this->KrajRegions->get($id);
+        $produit = $this->Produits->get($id);
         $this->set([
-            'krajRegion' => $krajRegion,
-            '_serialize' => ['krajRegion']
+            'produit' => $produit,
+            '_serialize' => ['produit']
         ]);
     }
 
     public function add()
     {
         $this->request->allowMethod(['post', 'put']);
-        $krajRegion = $this->KrajRegions->newEntity($this->request->getData());
-        if ($this->KrajRegions->save($krajRegion)) {
+        $produit = $this->Produits->newEntity($this->request->getData());
+        if ($this->Produits->save($produit)) {
             $message = 'Saved';
         } else {
             $message = 'Error';
         }
         $this->set([
             'message' => $message,
-            'krajRegion' => $krajRegion,
-            '_serialize' => ['message', 'krajRegion']
+            'produit' => $produit,
+            '_serialize' => ['message', 'produit']
         ]);
     }
 
     public function edit($id)
     {
         $this->request->allowMethod(['patch', 'post', 'put']);
-        $krajRegion = $this->KrajRegions->get($id);
-        $krajRegion = $this->KrajRegions->patchEntity($krajRegion, $this->request->getData());
-        if ($this->KrajRegions->save($krajRegion)) {
+        $produit = $this->Produits->get($id);
+        $produit = $this->Produits->patchEntity($produit, $this->request->getData());
+        if ($this->Produits->save($produit)) {
             $message = 'Saved';
         } else {
             $message = 'Error';
@@ -72,9 +72,9 @@ class KrajRegionsController extends AppController {
     public function delete($id)
     {
         $this->request->allowMethod(['delete']);
-        $krajRegion = $this->KrajRegions->get($id);
+        $produit = $this->Produits->get($id);
         $message = 'Deleted';
-        if (!$this->KrajRegions->delete($krajRegion)) {
+        if (!$this->Produits->delete($produit)) {
             $message = 'Error';
         }
         $this->set([

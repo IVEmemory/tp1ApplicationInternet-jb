@@ -19,7 +19,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('tasks_title_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('kod') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('code') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -28,7 +28,7 @@
             <tr>
                 <td><?= $this->Number->format($tasksTitle->id) ?></td>
                 <td><?= $tasksTitle->has('task') ? $this->Html->link($tasksTitle->task->id, ['controller' => 'Tasks', 'action' => 'view', $tasksTitle->task->id]) : '' ?></td>
-                <td><?= h($tasksTitle->kod) ?></td>
+                <td><?= h($tasksTitle->code) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $tasksTitle->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $tasksTitle->id]) ?>

@@ -16,18 +16,18 @@ class ObecCitiesFixture extends TestFixture
     // @codingStandardsIgnoreStart
     public $fields = [
         'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => 'ID obce', 'autoIncrement' => true, 'precision' => null],
-        'kraj_region_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => 'kraj_region', 'precision' => null, 'autoIncrement' => null],
-        'okres_county_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => 'okres_county', 'precision' => null, 'autoIncrement' => null],
-        'kod' => ['type' => 'string', 'length' => 11, 'null' => false, 'default' => null, 'collate' => 'utf8_czech_ci', 'comment' => 'Kód obce', 'precision' => null, 'fixed' => null],
-        'nazev' => ['type' => 'string', 'length' => 80, 'null' => false, 'default' => null, 'collate' => 'utf8_czech_ci', 'comment' => 'Název obce', 'precision' => null, 'fixed' => null],
+        'produit_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => 'produit', 'precision' => null, 'autoIncrement' => null],
+        'action_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => 'action', 'precision' => null, 'autoIncrement' => null],
+        'code' => ['type' => 'string', 'length' => 11, 'null' => false, 'default' => null, 'collate' => 'utf8_czech_ci', 'comment' => 'Kód obce', 'precision' => null, 'fixed' => null],
+        'actionPro' => ['type' => 'string', 'length' => 80, 'null' => false, 'default' => null, 'collate' => 'utf8_czech_ci', 'comment' => 'Název obce', 'precision' => null, 'fixed' => null],
         '_indexes' => [
-            'kraj_region_id' => ['type' => 'index', 'columns' => ['kraj_region_id'], 'length' => []],
-            'okres_county_id' => ['type' => 'index', 'columns' => ['okres_county_id'], 'length' => []],
+            'produit_id' => ['type' => 'index', 'columns' => ['produit_id'], 'length' => []],
+            'action_id' => ['type' => 'index', 'columns' => ['action_id'], 'length' => []],
         ],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
-            'obec_city_ibfk_1' => ['type' => 'foreign', 'columns' => ['kraj_region_id'], 'references' => ['kraj_regions', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
-            'obec_city_ibfk_2' => ['type' => 'foreign', 'columns' => ['okres_county_id'], 'references' => ['okres_counties', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
+            'obec_city_ibfk_1' => ['type' => 'foreign', 'columns' => ['produit_id'], 'references' => ['produits', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
+            'obec_city_ibfk_2' => ['type' => 'foreign', 'columns' => ['action_id'], 'references' => ['actions', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',
@@ -45,10 +45,10 @@ class ObecCitiesFixture extends TestFixture
         $this->records = [
             [
                 'id' => 1,
-                'kraj_region_id' => 1,
-                'okres_county_id' => 1,
-                'kod' => 'Lorem ips',
-                'nazev' => 'Lorem ipsum dolor sit amet',
+                'produit_id' => 1,
+                'action_id' => 1,
+                'code' => 'Lorem ips',
+                'actionPro' => 'Lorem ipsum dolor sit amet',
             ],
         ];
         parent::init();

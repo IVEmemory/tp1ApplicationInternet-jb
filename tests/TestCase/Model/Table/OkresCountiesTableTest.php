@@ -15,7 +15,7 @@ class OkresCountiesTableTest extends TestCase
      *
      * @var \App\Model\Table\OkresCountiesTable
      */
-    public $OkresCounties;
+    public $Actions;
 
     /**
      * Fixtures
@@ -23,9 +23,9 @@ class OkresCountiesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.OkresCounties',
-        'app.KrajRegions',
-        'app.ObecCities',
+        'app.Actions',
+        'app.Produits',
+        'app.EmplacementProduits',
     ];
 
     /**
@@ -36,8 +36,8 @@ class OkresCountiesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::getTableLocator()->exists('OkresCounties') ? [] : ['className' => OkresCountiesTable::class];
-        $this->OkresCounties = TableRegistry::getTableLocator()->get('OkresCounties', $config);
+        $config = TableRegistry::getTableLocator()->exists('Actions') ? [] : ['className' => OkresCountiesTable::class];
+        $this->Actions = TableRegistry::getTableLocator()->get('Actions', $config);
     }
 
     /**
@@ -47,7 +47,7 @@ class OkresCountiesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->OkresCounties);
+        unset($this->Actions);
 
         parent::tearDown();
     }

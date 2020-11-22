@@ -5,31 +5,31 @@ namespace App\Controller;
 use App\Controller\AppController;
 
 /**
- * OkresCounties Controller
+ * Actions Controller
  *
- * @property \App\Model\Table\OkresCountiesTable $OkresCounties
+ * @property \App\Model\Table\OkresCountiesTable $Actions
  *
  * @method \App\Model\Entity\OkresCounty[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class OkresCountiesController extends AppController {
+class ActionsController extends AppController {
 
     public function initialize() {
         parent::initialize();
-        $this->Auth->allow(['getByKrajRegion', 'add', 'edit', 'delete']);
+        $this->Auth->allow(['getByProduit', 'add', 'edit', 'delete']);
     }
 
-    public function getByKrajRegion() {
-        $kraj_region_id = $this->request->query('kraj_region_id');
+    public function getByProduit() {
+        $produit_id = $this->request->query('produit_id');
 
-        $okresCounties = $this->OkresCounties->find('all', [
-            'conditions' => ['OkresCounties.kraj_region_id' => $kraj_region_id],
+        $actions = $this->Actions->find('all', [
+            'conditions' => ['Actions.produit_id' => $produit_id],
         ]);
-        /**/        $this->set('okresCounties', $okresCounties);
-                  $this->set('_serialize', ['okresCounties']);
+        /**/        $this->set('actions', $actions);
+                  $this->set('_serialize', ['actions']);
         /**/
         /*      $data = '';
-                foreach ($okresCounties as $okresCounty) {
-                    $data .= '<option value="' . $okresCounty->id . '">' . $okresCounty->nazev . '</option>';
+                foreach ($actions as $action) {
+                    $data .= '<option value="' . $action->id . '">' . $action->actionPro . '</option>';
                 }
                 $this->autoRender = false; // ligne ajoutée
                 echo $data;
@@ -43,11 +43,11 @@ class OkresCountiesController extends AppController {
      */
     public function index() {
         $this->paginate = [
-            'contain' => ['KrajRegions'],
+            'contain' => ['Produits'],
         ];
-        $okresCounties = $this->paginate($this->OkresCounties);
+        $actions = $this->paginate($this->Actions);
 
-        $this->set(compact('okresCounties'));
+        $this->set(compact('actions'));
     }
 
     /**
@@ -58,11 +58,11 @@ class OkresCountiesController extends AppController {
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($id = null) {
-        $okresCounty = $this->OkresCounties->get($id, [
-            'contain' => ['KrajRegions', 'ObecCities'],
+        $action = $this->Actions->get($id, [
+            'contain' => ['Produits', 'EmplacementProduits'],
         ]);
 
-        $this->set('okresCounty', $okresCounty);
+        $this->set('action', $action);
     }
 
     /**
@@ -71,18 +71,18 @@ class OkresCountiesController extends AppController {
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
     public function add() {
-        $okresCounty = $this->OkresCounties->newEntity();
+        $action = $this->Actions->newEntity();
         if ($this->request->is('post')) {
-            $okresCounty = $this->OkresCounties->patchEntity($okresCounty, $this->request->getData());
-            if ($this->OkresCounties->save($okresCounty)) {
+            $action = $this->Actions->patchEntity($action, $this->request->getData());
+            if ($this->Actions->save($action)) {
                 $this->Flash->success(__('The okres county has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The okres county could not be saved. Please, try again.'));
         }
-        $krajRegions = $this->OkresCounties->KrajRegions->find('list', ['limit' => 200]);
-        $this->set(compact('okresCounty', 'krajRegions'));
+        $produits = $this->Actions->Produits->find('list', ['limit' => 200]);
+        $this->set(compact('action', 'produits'));
     }
 
     /**
@@ -93,20 +93,20 @@ class OkresCountiesController extends AppController {
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function edit($id = null) {
-        $okresCounty = $this->OkresCounties->get($id, [
+        $action = $this->Actions->get($id, [
             'contain' => [],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $okresCounty = $this->OkresCounties->patchEntity($okresCounty, $this->request->getData());
-            if ($this->OkresCounties->save($okresCounty)) {
+            $action = $this->Actions->patchEntity($action, $this->request->getData());
+            if ($this->Actions->save($action)) {
                 $this->Flash->success(__('The okres county has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The okres county could not be saved. Please, try again.'));
         }
-        $krajRegions = $this->OkresCounties->KrajRegions->find('list', ['limit' => 200]);
-        $this->set(compact('okresCounty', 'krajRegions'));
+        $produits = $this->Actions->Produits->find('list', ['limit' => 200]);
+        $this->set(compact('action', 'produits'));
     }
 
     /**
@@ -118,8 +118,8 @@ class OkresCountiesController extends AppController {
      */
     public function delete($id = null) {
         $this->request->allowMethod(['post', 'delete']);
-        $okresCounty = $this->OkresCounties->get($id);
-        if ($this->OkresCounties->delete($okresCounty)) {
+        $action = $this->Actions->get($id);
+        if ($this->Actions->delete($action)) {
             $this->Flash->success(__('The okres county has been deleted.'));
         } else {
             $this->Flash->error(__('The okres county could not be deleted. Please, try again.'));

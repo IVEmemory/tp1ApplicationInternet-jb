@@ -4,18 +4,18 @@ namespace App\Controller;
 use App\Controller\AppController;
 
 /**
- * KrajRegions Controller
+ * Produit Controller
  *
- * @property \App\Model\Table\KrajRegionsTable $KrajRegions
+ * @property \App\Model\Table\KrajRegionsTable $Produits
  *
  * @method \App\Model\Entity\KrajRegion[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class KrajRegionsController extends AppController
+class ProduitsController extends AppController
 {
 
     public function initialize() {
         parent::initialize();
-        $this->Auth->allow(['getByKrajRegion', 'add', 'edit', 'delete']);
+        $this->Auth->allow(['getByProduit', 'add', 'edit', 'delete']);
     }
 
     /**
@@ -25,10 +25,10 @@ class KrajRegionsController extends AppController
      */
     public function index()
     {
-        $this->viewBuilder()->setLayout('krajRegionsSpa');
-        $krajRegions = $this->KrajRegions->find('all');
-//        $krajRegions = $this->paginate($this->KrajRegions);
-        $this->set(compact('krajRegions'));
+        $this->viewBuilder()->setLayout('produitsSpa');
+        $produits = $this->Produits->find('all');
+//        $produits = $this->paginate($this->Produits);
+        $this->set(compact('produits'));
     }
 
     /**
@@ -40,11 +40,11 @@ class KrajRegionsController extends AppController
      */
 /*    public function view($id = null)
     {
-        $krajRegion = $this->KrajRegions->get($id, [
-            'contain' => ['ObecCities', 'OkresCounties'],
+        $produit = $this->Produits->get($id, [
+            'contain' => ['EmplacementProduits', 'Actions'],
         ]);
 
-        $this->set('krajRegion', $krajRegion);
+        $this->set('produit', $produit);
     }
 */
     /**
@@ -54,17 +54,17 @@ class KrajRegionsController extends AppController
      */
 /*    public function add()
     {
-        $krajRegion = $this->KrajRegions->newEntity();
+        $produit = $this->Produits->newEntity();
         if ($this->request->is('post')) {
-            $krajRegion = $this->KrajRegions->patchEntity($krajRegion, $this->request->getData());
-            if ($this->KrajRegions->save($krajRegion)) {
+            $produit = $this->Produits->patchEntity($produit, $this->request->getData());
+            if ($this->Produits->save($produit)) {
                 $this->Flash->success(__('The kraj region has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The kraj region could not be saved. Please, try again.'));
         }
-        $this->set(compact('krajRegion'));
+        $this->set(compact('produit'));
     }
 */
     /**
@@ -76,19 +76,19 @@ class KrajRegionsController extends AppController
      */
 /*    public function edit($id = null)
     {
-        $krajRegion = $this->KrajRegions->get($id, [
+        $produit = $this->Produits->get($id, [
             'contain' => [],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $krajRegion = $this->KrajRegions->patchEntity($krajRegion, $this->request->getData());
-            if ($this->KrajRegions->save($krajRegion)) {
+            $produit = $this->Produits->patchEntity($produit, $this->request->getData());
+            if ($this->Produits->save($produit)) {
                 $this->Flash->success(__('The kraj region has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The kraj region could not be saved. Please, try again.'));
         }
-        $this->set(compact('krajRegion'));
+        $this->set(compact('produit'));
     }
 */
     /**
@@ -101,8 +101,8 @@ class KrajRegionsController extends AppController
 /*    public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $krajRegion = $this->KrajRegions->get($id);
-        if ($this->KrajRegions->delete($krajRegion)) {
+        $produit = $this->Produits->get($id);
+        if ($this->Produits->delete($produit)) {
             $this->Flash->success(__('The kraj region has been deleted.'));
         } else {
             $this->Flash->error(__('The kraj region could not be deleted. Please, try again.'));

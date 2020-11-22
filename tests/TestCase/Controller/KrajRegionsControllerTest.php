@@ -20,9 +20,9 @@ class KrajRegionsControllerTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.KrajRegions',
-        'app.ObecCities',
-        'app.OkresCounties',
+        'app.Produits',
+        'app.EmplacementProduits',
+        'app.Actions',
     ];
 
     /**

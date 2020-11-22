@@ -30,7 +30,7 @@ class Task extends Entity
         'start_date' => true,
         'end_date' => true,
         'information_task' => true,
-        'obec_city_id' => true,
+        'emplacementProduit_id' => true,
         'user_id' => true,
         'user' => true,
         'files' => true,

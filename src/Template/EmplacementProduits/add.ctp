@@ -1,15 +1,15 @@
 <?php
 $urlToLinkedListFilter = $this->Url->build([
-    "controller" => "OkresCounties",
-    "action" => "getByKrajRegion",
+    "controller" => "Actions",
+    "action" => "getByProduit",
     "_ext" => "json"
         ]);
 echo $this->Html->scriptBlock('var urlToLinkedListFilter = "' . $urlToLinkedListFilter . '";', ['block' => true]);
-echo $this->Html->script('ObecCities/add_edit', ['block' => 'scriptBottom']);
+echo $this->Html->script('EmplacementProduits/add_edit', ['block' => 'scriptBottom']);
 ?><?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\ObecCity $obecCity
+ * @var \App\Model\Entity\ObecCity $emplacementProduit
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
@@ -21,18 +21,18 @@ echo $this->Html->script('ObecCities/add_edit', ['block' => 'scriptBottom']);
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Files'), ['controller' => 'Files', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New File'), ['controller' => 'Files', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('Liste de tâche 2.0'), ['controller' => 'KrajRegions', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Liste de tâche 2.0'), ['controller' => 'Produits', 'action' => 'index']) ?> </li>
     </ul>
 </nav>
-<div class="obecCities form large-9 medium-8 columns content">
-    <?= $this->Form->create($obecCity) ?>
+<div class="emplacementProduits form large-9 medium-8 columns content">
+    <?= $this->Form->create($emplacementProduit) ?>
     <fieldset>
         <legend><?= __('Ajouter une action (ex: lait)') ?></legend>
         <?php
-            echo $this->Form->control('kraj_region_id', ['options' => $krajRegions]);
-            echo $this->Form->control('okres_county_id', ['options' => $okresCounties]);
-            echo $this->Form->control('kod');
-            echo $this->Form->control('nazev');
+            echo $this->Form->control('produit_id', ['options' => $produits]);
+            echo $this->Form->control('action_id', ['options' => $actions]);
+            echo $this->Form->control('code');
+            echo $this->Form->control('actionPro');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

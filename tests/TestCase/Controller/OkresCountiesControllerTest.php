@@ -1,14 +1,14 @@
 <?php
 namespace App\Test\TestCase\Controller;
 
-use App\Controller\OkresCountiesController;
+use App\Controller\ActionsController;
 use Cake\TestSuite\IntegrationTestTrait;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Controller\OkresCountiesController Test Case
+ * App\Controller\ActionsController Test Case
  *
- * @uses \App\Controller\OkresCountiesController
+ * @uses \App\Controller\ActionsController
  */
 class OkresCountiesControllerTest extends TestCase
 {
@@ -20,9 +20,9 @@ class OkresCountiesControllerTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.OkresCounties',
-        'app.KrajRegions',
-        'app.ObecCities',
+        'app.Actions',
+        'app.Produits',
+        'app.EmplacementProduits',
     ];
 
     /**

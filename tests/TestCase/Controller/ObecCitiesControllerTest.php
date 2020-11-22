@@ -20,9 +20,9 @@ class ObecCitiesControllerTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.ObecCities',
-        'app.KrajRegions',
-        'app.OkresCounties',
+        'app.EmplacementProduits',
+        'app.Produits',
+        'app.Actions',
         'app.Tasks',
     ];
 

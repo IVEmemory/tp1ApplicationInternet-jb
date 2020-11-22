@@ -24,7 +24,7 @@ use Cake\Routing\Route\DashedRoute;
 
 Router::prefix('api', function ($routes) {
     $routes->setExtensions(['json', 'xml']);
-    $routes->resources('KrajRegions');
+    $routes->resources('Produits');
 });
 
 Router::prefix('admin', function (RouteBuilder $routes) {

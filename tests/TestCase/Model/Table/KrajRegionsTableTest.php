@@ -15,7 +15,7 @@ class KrajRegionsTableTest extends TestCase
      *
      * @var \App\Model\Table\KrajRegionsTable
      */
-    public $KrajRegions;
+    public $Produits;
 
     /**
      * Fixtures
@@ -23,9 +23,9 @@ class KrajRegionsTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.KrajRegions',
-        'app.ObecCities',
-        'app.OkresCounties',
+        'app.Produits',
+        'app.EmplacementProduits',
+        'app.Actions',
     ];
 
     /**
@@ -36,8 +36,8 @@ class KrajRegionsTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::getTableLocator()->exists('KrajRegions') ? [] : ['className' => KrajRegionsTable::class];
-        $this->KrajRegions = TableRegistry::getTableLocator()->get('KrajRegions', $config);
+        $config = TableRegistry::getTableLocator()->exists('Produits') ? [] : ['className' => KrajRegionsTable::class];
+        $this->Produits = TableRegistry::getTableLocator()->get('Produits', $config);
     }
 
     /**
@@ -47,7 +47,7 @@ class KrajRegionsTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->KrajRegions);
+        unset($this->Produits);
 
         parent::tearDown();
     }

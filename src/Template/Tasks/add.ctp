@@ -5,13 +5,13 @@
  */
 ?>
 <?php
-$urlToObecCitiesAutocompletedemoJson = $this->Url->build([
+$urlToEmplacemnetProduitsAutocompletedemoJson = $this->Url->build([
     "controller" => "TasksTitle",
     "action" => "findtasksTitle",
     "_ext" => "json"
         ]);
-echo $this->Html->scriptBlock('var urlToAutocompleteAction = "' . $urlToObecCitiesAutocompletedemoJson . '";', ['block' => true]);
-echo $this->Html->script('Tasks/add_edit/obecCityAutocomplete', ['block' => 'scriptBottom']);
+echo $this->Html->scriptBlock('var urlToAutocompleteAction = "' . $urlToEmplacemnetProduitsAutocompletedemoJson . '";', ['block' => true]);
+echo $this->Html->script('Tasks/add_edit/emplacementProduitAutoComplete', ['block' => 'scriptBottom']);
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
@@ -30,7 +30,7 @@ echo $this->Html->script('Tasks/add_edit/obecCityAutocomplete', ['block' => 'scr
         <?php
             echo $this->Form->control('start_date');
             echo $this->Form->control('end_date');
-            echo $this->Form->control('obec_city_id', ['label' => '(obec_city_id)', 'type' => 'hidden']);
+            echo $this->Form->control('emplacementProduit_id', ['label' => '(emplacementProduit_id)', 'type' => 'hidden']);
             //echo $this->Form->control('tasks_id', ['label' => '(tasks_id)', 'type' => 'hidden']);
         ?>
         <div class="input text"> 

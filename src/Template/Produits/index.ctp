@@ -1,7 +1,7 @@
 <?php
-$urlToRestApi = $this->Url->build('/api/kraj_regions', true);
+$urlToRestApi = $this->Url->build('/api/produits', true);
 echo $this->Html->scriptBlock('var urlToRestApi = "' . $urlToRestApi . '";', ['block' => true]);
-echo $this->Html->script('KrajRegions/index', ['block' => 'scriptBottom']);
+echo $this->Html->script('Produits/index', ['block' => 'scriptBottom']);
 ?>
         <div class="container">
             <div class="row">
@@ -9,11 +9,11 @@ echo $this->Html->script('KrajRegions/index', ['block' => 'scriptBottom']);
                     <h5>Tâches possible</h5>
                     <!-- Add link -->
                     <div class="float-right">
-                        <a href="javascript:void(0);" class="btn btn-success" data-type="add" data-toggle="modal" data-target="#modalKrajRegionAddEdit"><i class="plus"></i> Nouvelle tâche vague </a>
+                        <a href="javascript:void(0);" class="btn btn-success" data-type="add" data-toggle="modal" data-target="#modalProduitAddEdit"><i class="plus"></i> Nouvelle tâche vague </a>
                     </div>
                 </div>
                 <div class="statusMsg"></div>
-                <!-- List the KrajRegions -->
+                <!-- List the Produits -->
                 <table class="table table-striped table-bordered">
                     <thead class="thead-dark">
                         <tr>
@@ -24,21 +24,21 @@ echo $this->Html->script('KrajRegions/index', ['block' => 'scriptBottom']);
                         </tr>
                     </thead>
                     <tbody id="krajRegionData">
-                        <?php if (!empty($krajRegions)) {
-                            foreach ($krajRegions as $row) { ?>
+                        <?php if (!empty($produits)) {
+                            foreach ($produits as $row) { ?>
                                 <tr>
                                     <td><?php echo '#' . $row['id']; ?></td>
-                                    <td><?php echo $row['nazev']; ?></td>
-                                    <td><?php echo $row['kod']; ?></td>
+                                    <td><?php echo $row['actionPro']; ?></td>
+                                    <td><?php echo $row['code']; ?></td>
                                     <td>
                                         <a href="javascript:void(0);" class="btn btn-warning" 
                                            rowID="<?php echo $row['id']; ?>" data-type="edit" 
-                                           data-toggle="modal" data-target="#modalKrajRegionAddEdit">
+                                           data-toggle="modal" data-target="#modalProduitAddEdit">
                                             edit
                                         </a>
                                         <a href="javascript:void(0);" class="btn btn-danger" 
                                            onclick="return confirm('Are you sure to delete data?') ? 
-                                               krajRegionAction('delete', '<?php echo $row['id']; ?>') : false;">
+                                               produitAction('delete', '<?php echo $row['id']; ?>') : false;">
                                             delete
                                         </a>
                                     </td>
@@ -55,7 +55,7 @@ echo $this->Html->script('KrajRegions/index', ['block' => 'scriptBottom']);
 
 
         <!-- Modal Add and Edit Form -->
-        <div class="modal fade" id="modalKrajRegionAddEdit" role="dialog">
+        <div class="modal fade" id="modalProduitAddEdit" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <!-- Modal Header -->
@@ -69,12 +69,12 @@ echo $this->Html->script('KrajRegions/index', ['block' => 'scriptBottom']);
                         <div class="statusMsg"></div>
                         <form role="form">
                             <div class="form-group">
-                                <label for="nazev">Nom de la tâche vague</label>
-                                <input type="text" class="form-control" name="nazev" id="nazev" placeholder="Enter the name (nazev)">
+                                <label for="actionPro">Nom de la tâche vague</label>
+                                <input type="text" class="form-control" name="actionPro" id="actionPro" placeholder="Enter the name (actionPro)">
                             </div>
                             <div class="form-group">
-                                <label for="kod">Code de la tâche</label>
-                                <input type="text" class="form-control" name="kod" id="kod" placeholder="Enter the code (kod)">
+                                <label for="code">Code de la tâche</label>
+                                <input type="text" class="form-control" name="code" id="code" placeholder="Enter the code (code)">
                             </div>
                             <input type="hidden" class="form-control" name="id" id="id"/>
                         </form>

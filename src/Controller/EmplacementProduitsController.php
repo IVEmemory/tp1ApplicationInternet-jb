@@ -4,13 +4,13 @@ namespace App\Controller;
 use App\Controller\AppController;
 
 /**
- * ObecCities Controller
+ * EmplacementProduits Controller
  *
- * @property \App\Model\Table\ObecCitiesTable $ObecCities
+ * @property \App\Model\Table\ObecCitiesTable $EmplacementProduits
  *
  * @method \App\Model\Entity\ObecCity[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class ObecCitiesController extends AppController
+class EmplacementProduitsController extends AppController
 {
     /**
      * Index method
@@ -20,11 +20,11 @@ class ObecCitiesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['KrajRegions', 'OkresCounties'],
+            'contain' => ['Produits', 'Actions'],
         ];
-        $obecCities = $this->paginate($this->ObecCities);
+        $emplacementProduits = $this->paginate($this->EmplacementProduits);
 
-        $this->set(compact('obecCities'));
+        $this->set(compact('emplacementProduits'));
     }
 
     /**
@@ -36,11 +36,11 @@ class ObecCitiesController extends AppController
      */
     public function view($id = null)
     {
-        $obecCity = $this->ObecCities->get($id, [
-            'contain' => ['KrajRegions', 'OkresCounties', 'Tasks'],
+        $emplacementProduit = $this->EmplacementProduits->get($id, [
+            'contain' => ['Produits', 'Actions', 'Tasks'],
         ]);
 
-        $this->set('obecCity', $obecCity);
+        $this->set('emplacementProduit', $emplacementProduit);
     }
 
     /**
@@ -50,19 +50,19 @@ class ObecCitiesController extends AppController
      */
     public function add()
     {
-        $obecCity = $this->ObecCities->newEntity();
+        $emplacementProduit = $this->EmplacementProduits->newEntity();
         if ($this->request->is('post')) {
-            $obecCity = $this->ObecCities->patchEntity($obecCity, $this->request->getData());
-            if ($this->ObecCities->save($obecCity)) {
+            $emplacementProduit = $this->EmplacementProduits->patchEntity($emplacementProduit, $this->request->getData());
+            if ($this->EmplacementProduits->save($emplacementProduit)) {
                 $this->Flash->success(__('The obec city has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The obec city could not be saved. Please, try again.'));
         }
-        $krajRegions = $this->ObecCities->KrajRegions->find('list', ['limit' => 200]);
-        $okresCounties = $this->ObecCities->OkresCounties->find('list', ['limit' => 200]);
-        $this->set(compact('obecCity', 'krajRegions', 'okresCounties'));
+        $produits = $this->EmplacementProduits->Produits->find('list', ['limit' => 200]);
+        $actions = $this->EmplacementProduits->Actions->find('list', ['limit' => 200]);
+        $this->set(compact('emplacementProduit', 'produits', 'actions'));
     }
 
     /**
@@ -74,21 +74,21 @@ class ObecCitiesController extends AppController
      */
     public function edit($id = null)
     {
-        $obecCity = $this->ObecCities->get($id, [
-            'contain' => ['KrajRegions', 'OkresCounties'],
+        $emplacementProduit = $this->EmplacementProduits->get($id, [
+            'contain' => ['Produits', 'Actions'],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $obecCity = $this->ObecCities->patchEntity($obecCity, $this->request->getData());
-            if ($this->ObecCities->save($obecCity)) {
+            $emplacementProduit = $this->EmplacementProduits->patchEntity($emplacementProduit, $this->request->getData());
+            if ($this->EmplacementProduits->save($emplacementProduit)) {
                 $this->Flash->success(__('The obec city has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The obec city could not be saved. Please, try again.'));
         }
-        $krajRegions = $this->ObecCities->KrajRegions->find('list', ['limit' => 200]);
-        $okresCounties = $this->ObecCities->OkresCounties->find('list', ['limit' => 200]);
-        $this->set(compact('obecCity', 'krajRegions', 'okresCounties'));
+        $produits = $this->EmplacementProduits->Produits->find('list', ['limit' => 200]);
+        $actions = $this->EmplacementProduits->Actions->find('list', ['limit' => 200]);
+        $this->set(compact('emplacementProduit', 'produits', 'actions'));
     }
 
     /**
@@ -101,8 +101,8 @@ class ObecCitiesController extends AppController
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $obecCity = $this->ObecCities->get($id);
-        if ($this->ObecCities->delete($obecCity)) {
+        $emplacementProduit = $this->EmplacementProduits->get($id);
+        if ($this->EmplacementProduits->delete($emplacementProduit)) {
             $this->Flash->success(__('The obec city has been deleted.'));
         } else {
             $this->Flash->error(__('The obec city could not be deleted. Please, try again.'));

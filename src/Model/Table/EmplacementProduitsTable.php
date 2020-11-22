@@ -7,10 +7,10 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * ObecCities Model
+ * EmplacementProduits Model
  *
- * @property \App\Model\Table\KrajRegionsTable&\Cake\ORM\Association\BelongsTo $KrajRegions
- * @property \App\Model\Table\OkresCountiesTable&\Cake\ORM\Association\BelongsTo $OkresCounties
+ * @property \App\Model\Table\KrajRegionsTable&\Cake\ORM\Association\BelongsTo $Produits
+ * @property \App\Model\Table\OkresCountiesTable&\Cake\ORM\Association\BelongsTo $Actions
  * @property \App\Model\Table\TasksTable&\Cake\ORM\Association\HasMany $Tasks
  *
  * @method \App\Model\Entity\ObecCity get($primaryKey, $options = [])
@@ -22,7 +22,7 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\ObecCity[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\ObecCity findOrCreate($search, callable $callback = null, $options = [])
  */
-class ObecCitiesTable extends Table
+class EmplacementProduitsTable extends Table
 {
     /**
      * Initialize method
@@ -34,20 +34,20 @@ class ObecCitiesTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('obec_cities');
-        $this->setDisplayField('nazev');
+        $this->setTable('emplacementProduits');
+        $this->setDisplayField('actionPro');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('KrajRegions', [
-            'foreignKey' => 'kraj_region_id',
+        $this->belongsTo('Produits', [
+            'foreignKey' => 'produit_id',
             'joinType' => 'INNER',
         ]);
-        $this->belongsTo('OkresCounties', [
-            'foreignKey' => 'okres_county_id',
+        $this->belongsTo('Actions', [
+            'foreignKey' => 'action_id',
             'joinType' => 'INNER',
         ]);
         $this->hasMany('Tasks', [
-            'foreignKey' => 'obec_city_id',
+            'foreignKey' => 'emplacementProduit_id',
         ]);
     }
 
@@ -64,16 +64,16 @@ class ObecCitiesTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->scalar('kod')
-            ->maxLength('kod', 11)
-            ->requirePresence('kod', 'create')
-            ->notEmptyString('kod');
+            ->scalar('code')
+            ->maxLength('code', 11)
+            ->requirePresence('code', 'create')
+            ->notEmptyString('code');
 
         $validator
-            ->scalar('nazev')
-            ->maxLength('nazev', 80)
-            ->requirePresence('nazev', 'create')
-            ->notEmptyString('nazev');
+            ->scalar('actionPro')
+            ->maxLength('actionPro', 80)
+            ->requirePresence('actionPro', 'create')
+            ->notEmptyString('actionPro');
 
         return $validator;
     }
@@ -87,8 +87,8 @@ class ObecCitiesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['kraj_region_id'], 'KrajRegions'));
-        $rules->add($rules->existsIn(['okres_county_id'], 'OkresCounties'));
+        $rules->add($rules->existsIn(['produit_id'], 'Produits'));
+        $rules->add($rules->existsIn(['action_id'], 'Actions'));
 
         return $rules;
     }

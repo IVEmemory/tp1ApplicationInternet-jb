@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 09 nov. 2020 à 22:10
+-- Généré le :  Dim 22 nov. 2020 à 16:11
 -- Version du serveur :  10.3.17-MariaDB
--- Version de PHP :  7.3.9
+-- Version de PHP :  7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,102 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `applicationinternet`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `actions`
+--
+
+CREATE TABLE `actions` (
+  `id` int(11) NOT NULL COMMENT 'ID okres_countyu',
+  `produit_id` int(11) NOT NULL COMMENT 'kraj_region',
+  `code` varchar(9) COLLATE utf8_czech_ci NOT NULL COMMENT 'Kód okres_countyu',
+  `actionPro` varchar(80) COLLATE utf8_czech_ci NOT NULL COMMENT 'Název okres_countyu'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci COMMENT='okres_county';
+
+--
+-- Déchargement des données de la table `actions`
+--
+
+INSERT INTO `actions` (`id`, `produit_id`, `code`, `actionPro`) VALUES
+(1, 1, 'CZ0412', 'Karlovy Vary'),
+(2, 2, 'CZ0205', 'Kutná Hora'),
+(3, 3, 'CZ0311', 'České Budějovice'),
+(4, 4, 'CZ0641', 'Blansko'),
+(5, 5, 'CZ0523', 'Náchod'),
+(6, 6, 'CZ0534', 'Ústí nad Orlicí'),
+(7, 7, 'CZ0803', 'Karviná'),
+(8, 5, 'CZ0524', 'Rychnov nad Kněžnou'),
+(9, 3, 'CZ0314', 'Písek'),
+(10, 8, 'CZ0512', 'Jablonec nad Nisou'),
+(11, 7, 'CZ0804', 'Nový Jičín'),
+(12, 9, 'CZ0713', 'Prostějov'),
+(13, 7, 'CZ0801', 'Bruntál'),
+(14, 4, 'CZ0645', 'Hodonín'),
+(15, 10, 'CZ0633', 'Pelhřimov'),
+(16, 10, 'CZ0632', 'Jihlava'),
+(17, 11, 'CZ0421', 'Děčín'),
+(18, 1, 'CZ0411', 'Cheb'),
+(19, 3, 'CZ0315', 'Prachatice'),
+(20, 2, 'CZ0209', 'Praha-východ'),
+(21, 9, 'CZ0712', 'Olomouc'),
+(22, 5, 'CZ0521', 'Hradec Králové'),
+(23, 10, 'CZ0634', 'Třebíč'),
+(24, 12, 'CZ0722', 'Uherské Hradiště'),
+(25, 4, 'CZ0643', 'Brno-venkov'),
+(26, 13, 'CZ0321', 'Domažlice'),
+(27, 5, 'CZ0522', 'Jičín'),
+(28, 10, 'CZ0631', 'Havlíčkův Brod'),
+(29, 2, 'CZ0207', 'Mladá Boleslav'),
+(30, 10, 'CZ0635', 'Žďár nad Sázavou'),
+(31, 3, 'CZ0317', 'Tábor'),
+(32, 6, 'CZ0533', 'Svitavy'),
+(33, 3, 'CZ0313', 'Jindřichův Hradec'),
+(34, 4, 'CZ0647', 'Znojmo'),
+(35, 6, 'CZ0532', 'Pardubice'),
+(36, 2, 'CZ0204', 'Kolín'),
+(37, 12, 'CZ0721', 'Kroměříž'),
+(38, 7, 'CZ0802', 'Frýdek-Místek'),
+(39, 5, 'CZ0525', 'Trutnov'),
+(40, 3, 'CZ0316', 'Strakonice'),
+(41, 4, 'CZ0644', 'Břeclav'),
+(42, 2, 'CZ0202', 'Beroun'),
+(43, 13, 'CZ0325', 'Plzeň-sever'),
+(44, 2, 'CZ020C', 'Rakovník'),
+(45, 11, 'CZ0425', 'Most'),
+(46, 13, 'CZ0322', 'Klatovy'),
+(47, 11, 'CZ0423', 'Litoměřice'),
+(48, 7, 'CZ0805', 'Opava'),
+(49, 8, 'CZ0514', 'Semily'),
+(50, 9, 'CZ0711', 'Jeseník'),
+(51, 2, 'CZ0203', 'Kladno'),
+(52, 9, 'CZ0714', 'Přerov'),
+(53, 12, 'CZ0724', 'Zlín'),
+(54, 2, 'CZ0201', 'Benešov'),
+(55, 3, 'CZ0312', 'Český Krumlov'),
+(56, 13, 'CZ0327', 'Tachov'),
+(57, 2, 'CZ0208', 'Nymburk'),
+(58, 6, 'CZ0531', 'Chrudim'),
+(59, 13, 'CZ0326', 'Rokycany'),
+(60, 2, 'CZ020B', 'Příbram'),
+(61, 8, 'CZ0511', 'Česká Lípa'),
+(62, 8, 'CZ0513', 'Liberec'),
+(63, 11, 'CZ0422', 'Chomutov'),
+(64, 11, 'CZ0426', 'Teplice'),
+(65, 11, 'CZ0424', 'Louny'),
+(66, 13, 'CZ0324', 'Plzeň-jih'),
+(67, 9, 'CZ0715', 'Šumperk'),
+(68, 4, 'CZ0646', 'Vyškov'),
+(69, 2, 'CZ020A', 'Praha-západ'),
+(70, 12, 'CZ0723', 'Vsetín'),
+(71, 4, 'CZ0642', 'Brno-město'),
+(72, 1, 'CZ0413', 'Sokolov'),
+(73, 2, 'CZ0206', 'Mělník'),
+(74, 7, 'CZ0806', 'Ostrava-město'),
+(75, 11, 'CZ0427', 'Ústí nad Labem'),
+(76, 13, 'CZ0323', 'Plzeň-město'),
+(77, 14, 'CZ0100', 'Praha');
 
 -- --------------------------------------------------------
 
@@ -52,116 +148,22 @@ INSERT INTO `comments` (`id`, `task_id`, `name`, `comment`, `created`, `modified
 -- --------------------------------------------------------
 
 --
--- Structure de la table `files`
+-- Structure de la table `emplacementproduits`
 --
 
-CREATE TABLE `files` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `path` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1 = Active, 0 = Inactive'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Déchargement des données de la table `files`
---
-
-INSERT INTO `files` (`id`, `name`, `path`, `created`, `modified`, `status`) VALUES
-(1, 'helfenburk_shody.jpg', 'files/add/', '2020-09-27 00:00:00', '2020-09-27 00:00:00', 1),
-(3, 'JessyPicture.jpg', 'files/add/', '2020-10-05 13:42:34', '2020-10-05 13:42:34', 1);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `i18n`
---
-
-CREATE TABLE `i18n` (
-  `id` int(11) NOT NULL,
-  `locale` varchar(6) NOT NULL,
-  `model` varchar(255) NOT NULL,
-  `foreign_key` int(10) NOT NULL,
-  `field` varchar(255) NOT NULL,
-  `content` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `i18n`
---
-
-INSERT INTO `i18n` (`id`, `locale`, `model`, `foreign_key`, `field`, `content`) VALUES
-(1, 'en_CA', 'Tasks', 1, 'information_task', 'Full the fridge of milk'),
-(2, 'en_CA', 'Tasks', 3, 'information_task', 'You need to do this task as soon as possible.'),
-(3, 'fr_CA', 'Tasks', 1, 'information_task', 'Remplir le frigidaire de lait'),
-(4, 'fr_CA', 'Tasks', 3, 'information_task', 'Cette tâche est à faire d\'urgence !'),
-(5, 'es_US', 'Tasks', 1, 'information_task', 'Füllen Sie den Kühlschrank mit Milch'),
-(6, 'es_US', 'Tasks', 3, 'information_task', 'Diese Aufgabe ist so schnell wie möglich zu erledigen'),
-(7, 'es_US', 'Tasks', 2, 'information_task', 'dies ist ein Test'),
-(8, 'fr_CA', 'Comments', 1, 'comment', 'Il a eu un dégat de lait dans le frigidaire, tâche executer dans un temps plus gros'),
-(9, 'es_US', 'Comments', 1, 'comment', 'Es gab ein Durcheinander von Milch im Kühlschrank, eine Aufgabe, die in größerer Zeit ausgeführt werden musste'),
-(10, 'fr_CA', 'Comments', 2, 'comment', 'Ceci est un commentaire'),
-(11, 'es_US', 'Comments', 2, 'comment', 'Dies ist ein Kommentar'),
-(12, 'es_US', 'Comments', 3, 'comment', 'Ich möchte einen Kommentar hinzufügen'),
-(13, 'es_US', 'Comments', 11, 'comment', 'Dies ist ein Kommentar'),
-(14, 'es_US', 'Comments', 13, 'comment', 'Kannst du das so schnell wie möglich'),
-(15, 'fr_CA', 'Comments', 11, 'comment', 'Ceci est un commentaire'),
-(16, 'fr_CA', 'Comments', 13, 'comment', 'Pouvez-vous faire cela dès que possible'),
-(17, 'fr_CA', 'Comments', 3, 'comment', 'Je veux ajouter un commentaire'),
-(18, 'fr_CA', 'Tasks', 2, 'information_task', 'Ceci est un test');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `kraj_regions`
---
-
-CREATE TABLE `kraj_regions` (
-  `id` int(11) NOT NULL COMMENT 'ID kraj_regione',
-  `kod` varchar(7) COLLATE utf8_czech_ci NOT NULL COMMENT 'Kód kraj_regione',
-  `nazev` varchar(80) COLLATE utf8_czech_ci NOT NULL COMMENT 'Název kraj_regione'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci COMMENT='kraj_region';
-
---
--- Déchargement des données de la table `kraj_regions`
---
-
-INSERT INTO `kraj_regions` (`id`, `kod`, `nazev`) VALUES
-(1, 'CZ041', 'Karlovarský kraj'),
-(2, 'CZ020', 'Středočeský kraj'),
-(3, 'CZ031', 'Jihočeský kraj'),
-(4, 'CZ064', 'Jihomoravský kraj'),
-(5, 'CZ052', 'Královéhradecký kraj'),
-(6, 'CZ053', 'Pardubický kraj'),
-(7, 'CZ080', 'Moravskoslezský kraj'),
-(8, 'CZ051', 'Liberecký kraj'),
-(9, 'CZ071', 'Olomoucký kraj'),
-(10, 'CZ063', 'Kraj Vysočina'),
-(11, 'CZ042', 'Ústecký kraj'),
-(12, 'CZ072', 'Zlínský kraj'),
-(13, 'CZ032', 'Plzeňský kraj'),
-(14, 'CZ010', 'Hlavní město Praha');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `obec_cities`
---
-
-CREATE TABLE `obec_cities` (
+CREATE TABLE `emplacementproduits` (
   `id` int(11) NOT NULL COMMENT 'ID obce',
-  `kraj_region_id` int(11) NOT NULL COMMENT 'kraj_region',
-  `okres_county_id` int(11) NOT NULL COMMENT 'okres_county',
-  `kod` varchar(11) COLLATE utf8_czech_ci NOT NULL COMMENT 'Kód obce',
-  `nazev` varchar(80) COLLATE utf8_czech_ci NOT NULL COMMENT 'Název obce'
+  `produit_id` int(11) NOT NULL COMMENT 'kraj_region',
+  `action_id` int(11) NOT NULL COMMENT 'okres_county',
+  `code` varchar(11) COLLATE utf8_czech_ci NOT NULL COMMENT 'Kód obce',
+  `actionPro` varchar(80) COLLATE utf8_czech_ci NOT NULL COMMENT 'Název obce'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci COMMENT='obec_city';
 
 --
--- Déchargement des données de la table `obec_cities`
+-- Déchargement des données de la table `emplacementproduits`
 --
 
-INSERT INTO `obec_cities` (`id`, `kraj_region_id`, `okres_county_id`, `kod`, `nazev`) VALUES
+INSERT INTO `emplacementproduits` (`id`, `produit_id`, `action_id`, `code`, `actionPro`) VALUES
 (1, 1, 1, '554979', 'Abertamy'),
 (2, 2, 2, '531367', 'Adamov'),
 (3, 3, 3, '535826', 'Adamov'),
@@ -1558,9 +1560,9 @@ INSERT INTO `obec_cities` (`id`, `kraj_region_id`, `okres_county_id`, `kod`, `na
 (1394, 3, 9, '561525', 'Horosedly'),
 (1395, 2, 20, '538221', 'Horoušany'),
 (1396, 13, 46, '542091', 'Horská Kvilda'),
-(1397, 13, 66, '557722', 'Horšice'),
-(1398, 13, 26, '553671', 'Horšovský Týn');
-INSERT INTO `obec_cities` (`id`, `kraj_region_id`, `okres_county_id`, `kod`, `nazev`) VALUES
+(1397, 13, 66, '557722', 'Horšice');
+INSERT INTO `emplacementproduits` (`id`, `produit_id`, `action_id`, `code`, `actionPro`) VALUES
+(1398, 13, 26, '553671', 'Horšovský Týn'),
 (1399, 2, 2, '531481', 'Horušice'),
 (1400, 1, 1, '551651', 'Hory'),
 (1401, 2, 57, '534854', 'Hořany'),
@@ -2953,9 +2955,9 @@ INSERT INTO `obec_cities` (`id`, `kraj_region_id`, `okres_county_id`, `kod`, `na
 (2788, 11, 63, '546518', 'Loučná pod Klínovcem'),
 (2789, 3, 55, '545601', 'Loučovice'),
 (2790, 4, 4, '553875', 'Louka'),
-(2791, 4, 14, '586331', 'Louka'),
-(2792, 11, 45, '567272', 'Louka u Litvínova');
-INSERT INTO `obec_cities` (`id`, `kraj_region_id`, `okres_county_id`, `kod`, `nazev`) VALUES
+(2791, 4, 14, '586331', 'Louka');
+INSERT INTO `emplacementproduits` (`id`, `produit_id`, `action_id`, `code`, `actionPro`) VALUES
+(2792, 11, 45, '567272', 'Louka u Litvínova'),
 (2793, 2, 29, '570770', 'Loukov'),
 (2794, 12, 37, '588709', 'Loukov'),
 (2795, 2, 29, '536261', 'Loukovec'),
@@ -4339,9 +4341,9 @@ INSERT INTO `obec_cities` (`id`, `kraj_region_id`, `okres_county_id`, `kod`, `na
 (4173, 2, 20, '538698', 'Radějovice'),
 (4174, 10, 30, '596515', 'Radenice'),
 (4175, 3, 31, '552917', 'Radenín'),
-(4176, 10, 30, '596523', 'Radešín'),
-(4177, 10, 30, '596531', 'Radešínská Svratka');
-INSERT INTO `obec_cities` (`id`, `kraj_region_id`, `okres_county_id`, `kod`, `nazev`) VALUES
+(4176, 10, 30, '596523', 'Radešín');
+INSERT INTO `emplacementproduits` (`id`, `produit_id`, `action_id`, `code`, `actionPro`) VALUES
+(4177, 10, 30, '596531', 'Radešínská Svratka'),
 (4178, 3, 31, '552925', 'Radětice'),
 (4179, 2, 60, '564389', 'Radětice'),
 (4180, 3, 19, '550485', 'Radhostice'),
@@ -5733,9 +5735,9 @@ INSERT INTO `obec_cities` (`id`, `kraj_region_id`, `okres_county_id`, `kod`, `na
 (5566, 4, 41, '584991', 'Velké Hostěrádky'),
 (5567, 7, 48, '510939', 'Velké Hoštice'),
 (5568, 13, 46, '557374', 'Velké Hydčice'),
-(5569, 11, 75, '555223', 'Velké Chvojno'),
-(5570, 10, 30, '596990', 'Velké Janovice');
-INSERT INTO `obec_cities` (`id`, `kraj_region_id`, `okres_county_id`, `kod`, `nazev`) VALUES
+(5569, 11, 75, '555223', 'Velké Chvojno');
+INSERT INTO `emplacementproduits` (`id`, `produit_id`, `action_id`, `code`, `actionPro`) VALUES
+(5570, 10, 30, '596990', 'Velké Janovice'),
 (5571, 12, 70, '545163', 'Velké Karlovice'),
 (5572, 9, 50, '569453', 'Velké Kunětice'),
 (5573, 9, 67, '541265', 'Velké Losiny'),
@@ -6421,98 +6423,64 @@ INSERT INTO `obec_cities` (`id`, `kraj_region_id`, `okres_county_id`, `kod`, `na
 -- --------------------------------------------------------
 
 --
--- Structure de la table `okres_counties`
+-- Structure de la table `files`
 --
 
-CREATE TABLE `okres_counties` (
-  `id` int(11) NOT NULL COMMENT 'ID okres_countyu',
-  `kraj_region_id` int(11) NOT NULL COMMENT 'kraj_region',
-  `kod` varchar(9) COLLATE utf8_czech_ci NOT NULL COMMENT 'Kód okres_countyu',
-  `nazev` varchar(80) COLLATE utf8_czech_ci NOT NULL COMMENT 'Název okres_countyu'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci COMMENT='okres_county';
+CREATE TABLE `files` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `path` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1 = Active, 0 = Inactive'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `okres_counties`
+-- Déchargement des données de la table `files`
 --
 
-INSERT INTO `okres_counties` (`id`, `kraj_region_id`, `kod`, `nazev`) VALUES
-(1, 1, 'CZ0412', 'Karlovy Vary'),
-(2, 2, 'CZ0205', 'Kutná Hora'),
-(3, 3, 'CZ0311', 'České Budějovice'),
-(4, 4, 'CZ0641', 'Blansko'),
-(5, 5, 'CZ0523', 'Náchod'),
-(6, 6, 'CZ0534', 'Ústí nad Orlicí'),
-(7, 7, 'CZ0803', 'Karviná'),
-(8, 5, 'CZ0524', 'Rychnov nad Kněžnou'),
-(9, 3, 'CZ0314', 'Písek'),
-(10, 8, 'CZ0512', 'Jablonec nad Nisou'),
-(11, 7, 'CZ0804', 'Nový Jičín'),
-(12, 9, 'CZ0713', 'Prostějov'),
-(13, 7, 'CZ0801', 'Bruntál'),
-(14, 4, 'CZ0645', 'Hodonín'),
-(15, 10, 'CZ0633', 'Pelhřimov'),
-(16, 10, 'CZ0632', 'Jihlava'),
-(17, 11, 'CZ0421', 'Děčín'),
-(18, 1, 'CZ0411', 'Cheb'),
-(19, 3, 'CZ0315', 'Prachatice'),
-(20, 2, 'CZ0209', 'Praha-východ'),
-(21, 9, 'CZ0712', 'Olomouc'),
-(22, 5, 'CZ0521', 'Hradec Králové'),
-(23, 10, 'CZ0634', 'Třebíč'),
-(24, 12, 'CZ0722', 'Uherské Hradiště'),
-(25, 4, 'CZ0643', 'Brno-venkov'),
-(26, 13, 'CZ0321', 'Domažlice'),
-(27, 5, 'CZ0522', 'Jičín'),
-(28, 10, 'CZ0631', 'Havlíčkův Brod'),
-(29, 2, 'CZ0207', 'Mladá Boleslav'),
-(30, 10, 'CZ0635', 'Žďár nad Sázavou'),
-(31, 3, 'CZ0317', 'Tábor'),
-(32, 6, 'CZ0533', 'Svitavy'),
-(33, 3, 'CZ0313', 'Jindřichův Hradec'),
-(34, 4, 'CZ0647', 'Znojmo'),
-(35, 6, 'CZ0532', 'Pardubice'),
-(36, 2, 'CZ0204', 'Kolín'),
-(37, 12, 'CZ0721', 'Kroměříž'),
-(38, 7, 'CZ0802', 'Frýdek-Místek'),
-(39, 5, 'CZ0525', 'Trutnov'),
-(40, 3, 'CZ0316', 'Strakonice'),
-(41, 4, 'CZ0644', 'Břeclav'),
-(42, 2, 'CZ0202', 'Beroun'),
-(43, 13, 'CZ0325', 'Plzeň-sever'),
-(44, 2, 'CZ020C', 'Rakovník'),
-(45, 11, 'CZ0425', 'Most'),
-(46, 13, 'CZ0322', 'Klatovy'),
-(47, 11, 'CZ0423', 'Litoměřice'),
-(48, 7, 'CZ0805', 'Opava'),
-(49, 8, 'CZ0514', 'Semily'),
-(50, 9, 'CZ0711', 'Jeseník'),
-(51, 2, 'CZ0203', 'Kladno'),
-(52, 9, 'CZ0714', 'Přerov'),
-(53, 12, 'CZ0724', 'Zlín'),
-(54, 2, 'CZ0201', 'Benešov'),
-(55, 3, 'CZ0312', 'Český Krumlov'),
-(56, 13, 'CZ0327', 'Tachov'),
-(57, 2, 'CZ0208', 'Nymburk'),
-(58, 6, 'CZ0531', 'Chrudim'),
-(59, 13, 'CZ0326', 'Rokycany'),
-(60, 2, 'CZ020B', 'Příbram'),
-(61, 8, 'CZ0511', 'Česká Lípa'),
-(62, 8, 'CZ0513', 'Liberec'),
-(63, 11, 'CZ0422', 'Chomutov'),
-(64, 11, 'CZ0426', 'Teplice'),
-(65, 11, 'CZ0424', 'Louny'),
-(66, 13, 'CZ0324', 'Plzeň-jih'),
-(67, 9, 'CZ0715', 'Šumperk'),
-(68, 4, 'CZ0646', 'Vyškov'),
-(69, 2, 'CZ020A', 'Praha-západ'),
-(70, 12, 'CZ0723', 'Vsetín'),
-(71, 4, 'CZ0642', 'Brno-město'),
-(72, 1, 'CZ0413', 'Sokolov'),
-(73, 2, 'CZ0206', 'Mělník'),
-(74, 7, 'CZ0806', 'Ostrava-město'),
-(75, 11, 'CZ0427', 'Ústí nad Labem'),
-(76, 13, 'CZ0323', 'Plzeň-město'),
-(77, 14, 'CZ0100', 'Praha');
+INSERT INTO `files` (`id`, `name`, `path`, `created`, `modified`, `status`) VALUES
+(1, 'helfenburk_shody.jpg', 'files/add/', '2020-09-27 00:00:00', '2020-09-27 00:00:00', 1),
+(3, 'JessyPicture.jpg', 'files/add/', '2020-10-05 13:42:34', '2020-10-05 13:42:34', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `i18n`
+--
+
+CREATE TABLE `i18n` (
+  `id` int(11) NOT NULL,
+  `locale` varchar(6) NOT NULL,
+  `model` varchar(255) NOT NULL,
+  `foreign_key` int(10) NOT NULL,
+  `field` varchar(255) NOT NULL,
+  `content` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `i18n`
+--
+
+INSERT INTO `i18n` (`id`, `locale`, `model`, `foreign_key`, `field`, `content`) VALUES
+(1, 'en_CA', 'Tasks', 1, 'information_task', 'Full the fridge of milk'),
+(2, 'en_CA', 'Tasks', 3, 'information_task', 'You need to do this task as soon as possible.'),
+(3, 'fr_CA', 'Tasks', 1, 'information_task', 'Remplir le frigidaire de lait'),
+(4, 'fr_CA', 'Tasks', 3, 'information_task', 'Cette tâche est à faire d\'urgence !'),
+(5, 'es_US', 'Tasks', 1, 'information_task', 'Füllen Sie den Kühlschrank mit Milch'),
+(6, 'es_US', 'Tasks', 3, 'information_task', 'Diese Aufgabe ist so schnell wie möglich zu erledigen'),
+(7, 'es_US', 'Tasks', 2, 'information_task', 'dies ist ein Test'),
+(8, 'fr_CA', 'Comments', 1, 'comment', 'Il a eu un dégat de lait dans le frigidaire, tâche executer dans un temps plus gros'),
+(9, 'es_US', 'Comments', 1, 'comment', 'Es gab ein Durcheinander von Milch im Kühlschrank, eine Aufgabe, die in größerer Zeit ausgeführt werden musste'),
+(10, 'fr_CA', 'Comments', 2, 'comment', 'Ceci est un commentaire'),
+(11, 'es_US', 'Comments', 2, 'comment', 'Dies ist ein Kommentar'),
+(12, 'es_US', 'Comments', 3, 'comment', 'Ich möchte einen Kommentar hinzufügen'),
+(13, 'es_US', 'Comments', 11, 'comment', 'Dies ist ein Kommentar'),
+(14, 'es_US', 'Comments', 13, 'comment', 'Kannst du das so schnell wie möglich'),
+(15, 'fr_CA', 'Comments', 11, 'comment', 'Ceci est un commentaire'),
+(16, 'fr_CA', 'Comments', 13, 'comment', 'Pouvez-vous faire cela dès que possible'),
+(17, 'fr_CA', 'Comments', 3, 'comment', 'Je veux ajouter un commentaire'),
+(18, 'fr_CA', 'Tasks', 2, 'information_task', 'Ceci est un test');
 
 -- --------------------------------------------------------
 
@@ -6529,6 +6497,38 @@ CREATE TABLE `photos` (
   `status` tinyint(1) NOT NULL,
   `task_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `produits`
+--
+
+CREATE TABLE `produits` (
+  `id` int(11) NOT NULL COMMENT 'ID kraj_regione',
+  `code` varchar(7) COLLATE utf8_czech_ci NOT NULL,
+  `actionPro` varchar(80) COLLATE utf8_czech_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci COMMENT='kraj_region';
+
+--
+-- Déchargement des données de la table `produits`
+--
+
+INSERT INTO `produits` (`id`, `code`, `actionPro`) VALUES
+(1, 'CZ041', 'Karlovarský kraj'),
+(2, 'CZ020', 'Středočeský kraj'),
+(3, 'CZ031', 'Jihočeský kraj'),
+(4, 'CZ064', 'Jihomoravský kraj'),
+(5, 'CZ052', 'Královéhradecký kraj'),
+(6, 'CZ053', 'Pardubický kraj'),
+(7, 'CZ080', 'Moravskoslezský kraj'),
+(8, 'CZ051', 'Liberecký kraj'),
+(9, 'CZ071', 'Olomoucký kraj'),
+(10, 'CZ063', 'Kraj Vysočina'),
+(11, 'CZ042', 'Ústecký kraj'),
+(12, 'CZ072', 'Zlínský kraj'),
+(13, 'CZ032', 'Plzeňský kraj'),
+(14, 'CZ010', 'Hlavní město Praha');
 
 -- --------------------------------------------------------
 
@@ -6688,6 +6688,13 @@ INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `g
 --
 
 --
+-- Index pour la table `actions`
+--
+ALTER TABLE `actions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `kraj_region_id` (`produit_id`);
+
+--
 -- Index pour la table `comments`
 --
 ALTER TABLE `comments`
@@ -6695,6 +6702,14 @@ ALTER TABLE `comments`
   ADD KEY `article_id` (`task_id`),
   ADD KEY `user_id` (`user_id`),
   ADD KEY `user_id_2` (`user_id`);
+
+--
+-- Index pour la table `emplacementproduits`
+--
+ALTER TABLE `emplacementproduits`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `kraj_region_id` (`produit_id`),
+  ADD KEY `okres_county_id` (`action_id`);
 
 --
 -- Index pour la table `files`
@@ -6711,32 +6726,17 @@ ALTER TABLE `i18n`
   ADD KEY `I18N_FIELD` (`model`,`foreign_key`,`field`);
 
 --
--- Index pour la table `kraj_regions`
---
-ALTER TABLE `kraj_regions`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `obec_cities`
---
-ALTER TABLE `obec_cities`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `kraj_region_id` (`kraj_region_id`),
-  ADD KEY `okres_county_id` (`okres_county_id`);
-
---
--- Index pour la table `okres_counties`
---
-ALTER TABLE `okres_counties`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `kraj_region_id` (`kraj_region_id`);
-
---
 -- Index pour la table `photos`
 --
 ALTER TABLE `photos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `task_id` (`task_id`);
+
+--
+-- Index pour la table `produits`
+--
+ALTER TABLE `produits`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `roles`
@@ -6794,10 +6794,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT pour la table `actions`
+--
+ALTER TABLE `actions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID okres_countyu', AUTO_INCREMENT=78;
+
+--
 -- AUTO_INCREMENT pour la table `comments`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT pour la table `emplacementproduits`
+--
+ALTER TABLE `emplacementproduits`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID obce', AUTO_INCREMENT=6252;
 
 --
 -- AUTO_INCREMENT pour la table `files`
@@ -6812,22 +6824,10 @@ ALTER TABLE `i18n`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT pour la table `kraj_regions`
+-- AUTO_INCREMENT pour la table `produits`
 --
-ALTER TABLE `kraj_regions`
+ALTER TABLE `produits`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID kraj_regione', AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT pour la table `obec_cities`
---
-ALTER TABLE `obec_cities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID obce', AUTO_INCREMENT=6252;
-
---
--- AUTO_INCREMENT pour la table `okres_counties`
---
-ALTER TABLE `okres_counties`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID okres_countyu', AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT pour la table `roles`
@@ -6870,30 +6870,30 @@ ALTER TABLE `users`
 --
 
 --
+-- Contraintes pour la table `actions`
+--
+ALTER TABLE `actions`
+  ADD CONSTRAINT `okres_county_ibfk_1` FOREIGN KEY (`produit_id`) REFERENCES `produits` (`id`);
+
+--
 -- Contraintes pour la table `comments`
 --
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`task_id`) REFERENCES `tasks` (`id`);
 
 --
--- Contraintes pour la table `obec_cities`
+-- Contraintes pour la table `emplacementproduits`
 --
-ALTER TABLE `obec_cities`
-  ADD CONSTRAINT `obec_city_ibfk_1` FOREIGN KEY (`kraj_region_id`) REFERENCES `kraj_regions` (`id`),
-  ADD CONSTRAINT `obec_city_ibfk_2` FOREIGN KEY (`okres_county_id`) REFERENCES `okres_counties` (`id`);
-
---
--- Contraintes pour la table `okres_counties`
---
-ALTER TABLE `okres_counties`
-  ADD CONSTRAINT `okres_county_ibfk_1` FOREIGN KEY (`kraj_region_id`) REFERENCES `kraj_regions` (`id`);
+ALTER TABLE `emplacementproduits`
+  ADD CONSTRAINT `obec_city_ibfk_1` FOREIGN KEY (`produit_id`) REFERENCES `produits` (`id`),
+  ADD CONSTRAINT `obec_city_ibfk_2` FOREIGN KEY (`action_id`) REFERENCES `actions` (`id`);
 
 --
 -- Contraintes pour la table `tasks`
 --
 ALTER TABLE `tasks`
   ADD CONSTRAINT `tasks_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `tasks_ibfk_2` FOREIGN KEY (`obec_city_id`) REFERENCES `obec_cities` (`id`);
+  ADD CONSTRAINT `tasks_ibfk_2` FOREIGN KEY (`obec_city_id`) REFERENCES `emplacementproduits` (`id`);
 
 --
 -- Contraintes pour la table `tasks_files`

@@ -25,8 +25,8 @@
             <td><?= $tasksTitle->has('task') ? $this->Html->link($tasksTitle->task->id, ['controller' => 'Tasks', 'action' => 'view', $tasksTitle->task->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Kod') ?></th>
-            <td><?= h($tasksTitle->kod) ?></td>
+            <th scope="row"><?= __('Code') ?></th>
+            <td><?= h($tasksTitle->code) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>
@@ -45,7 +45,7 @@
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Tasks Title Id') ?></th>
                 <th scope="col"><?= __('Comments Task Id') ?></th>
-                <th scope="col"><?= __('Kod') ?></th>
+                <th scope="col"><?= __('Code') ?></th>
                 <th scope="col"><?= __('Title') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -53,7 +53,7 @@
             <tr>
                 <td><?= h($tasksTitle->id) ?></td>
                 <td><?= h($tasksTitle->tasks_title_id) ?></td>
-                <td><?= h($tasksTitle->kod) ?></td>
+                <td><?= h($tasksTitle->code) ?></td>
                 <td><?= h($tasksTitle->title) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'TasksTitle', 'action' => 'view', $tasksTitle->id]) ?>

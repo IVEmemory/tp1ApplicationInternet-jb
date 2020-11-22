@@ -15,7 +15,7 @@ class ObecCitiesTableTest extends TestCase
      *
      * @var \App\Model\Table\ObecCitiesTable
      */
-    public $ObecCities;
+    public $EmplacementProduits;
 
     /**
      * Fixtures
@@ -23,9 +23,9 @@ class ObecCitiesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.ObecCities',
-        'app.KrajRegions',
-        'app.OkresCounties',
+        'app.EmplacementProduits',
+        'app.Produits',
+        'app.Actions',
         'app.Tasks',
     ];
 
@@ -37,8 +37,8 @@ class ObecCitiesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::getTableLocator()->exists('ObecCities') ? [] : ['className' => ObecCitiesTable::class];
-        $this->ObecCities = TableRegistry::getTableLocator()->get('ObecCities', $config);
+        $config = TableRegistry::getTableLocator()->exists('EmplacementProduits') ? [] : ['className' => ObecCitiesTable::class];
+        $this->EmplacementProduits = TableRegistry::getTableLocator()->get('EmplacementProduits', $config);
     }
 
     /**
@@ -48,7 +48,7 @@ class ObecCitiesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->ObecCities);
+        unset($this->EmplacementProduits);
 
         parent::tearDown();
     }

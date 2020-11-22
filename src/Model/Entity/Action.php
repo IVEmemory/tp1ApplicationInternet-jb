@@ -7,12 +7,12 @@ use Cake\ORM\Entity;
  * OkresCounty Entity
  *
  * @property int $id
- * @property int $kraj_region_id
- * @property string $kod
- * @property string $nazev
+ * @property int $produit_id
+ * @property string $code
+ * @property string $actionPro
  *
- * @property \App\Model\Entity\KrajRegion $kraj_region
- * @property \App\Model\Entity\ObecCity[] $obec_cities
+ * @property \App\Model\Entity\KrajRegion $produit
+ * @property \App\Model\Entity\ObecCity[] $emplacementProduits
  */
 class OkresCounty extends Entity
 {
@@ -26,10 +26,10 @@ class OkresCounty extends Entity
      * @var array
      */
     protected $_accessible = [
-        'kraj_region_id' => true,
-        'kod' => true,
-        'nazev' => true,
-        'kraj_region' => true,
-        'obec_cities' => true,
+        'produit_id' => true,
+        'code' => true,
+        'actionPro' => true,
+        'produit' => true,
+        'emplacementProduits' => true,
     ];
 }

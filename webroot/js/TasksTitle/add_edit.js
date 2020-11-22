@@ -5,14 +5,14 @@ $(document).ready(function () {
         if (krajRegionId) {
             $.ajax({
                 url: urlToLinkedListFilter,
-                data: 'kraj_region_id=' + krajRegionId,
-                success: function (okresCounties) {
+                data: 'produit_id=' + krajRegionId,
+                success: function (actions) {
                     $select = $('#okres-county-id');
                     $select.find('option').remove();
-                    $.each(okresCounties, function (key, value)
+                    $.each(actions, function (key, value)
                     {
                         $.each(value, function (childKey, childValue) {
-                            $select.append('<option value=' + childValue.id + '>' + childValue.nazev + '</option>');
+                            $select.append('<option value=' + childValue.id + '>' + childValue.actionPro + '</option>');
                         });
                     });
                 }

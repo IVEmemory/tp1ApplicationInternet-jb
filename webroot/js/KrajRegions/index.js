@@ -1,4 +1,4 @@
-// Update the krajRegions data list
+// Update the produits data list
 function getKrajRegions() {
     $.ajax({
         type: 'GET',
@@ -8,20 +8,20 @@ function getKrajRegions() {
                 function (data) {
                     var krajRegionTable = $('#krajRegionData');
                     krajRegionTable.empty();
-                    $.each(data.krajRegions, function (key, value)
+                    $.each(data.produits, function (key, value)
                     {
                         var editDeleteButtons = '</td><td>' +
                                 '<a href="javascript:void(0);" class="btn btn-warning" rowID="' +
                                     value.id + 
-                                    '" data-type="edit" data-toggle="modal" data-target="#modalKrajRegionAddEdit">' + 
+                                    '" data-type="edit" data-toggle="modal" data-target="#modalProduitAddEdit">' + 
                                     'edit</a>' +
                                 '<a href="javascript:void(0);" class="btn btn-danger"' +
                                     'onclick="return confirm(\'Are you sure to delete data?\') ?' + 
-                                    'krajRegionAction(\'delete\', \'' + 
+                                    'produitAction(\'delete\', \'' + 
                                     value.id + 
                                     '\') : false;">delete</a>' +
                                 '</td></tr>';
-                        krajRegionTable.append('<tr><td>' + value.id + '</td><td>' + value.nazev + '</td><td>' + value.kod + editDeleteButtons);
+                        krajRegionTable.append('<tr><td>' + value.id + '</td><td>' + value.actionPro + '</td><td>' + value.code + editDeleteButtons);
  
                     });
 
@@ -44,13 +44,13 @@ function convertFormToJSON(form) {
 }
 
 
-function krajRegionAction(type, id) {
+function produitAction(type, id) {
     id = (typeof id == "undefined") ? '' : id;
     var statusArr = {add: "added", edit: "updated", delete: "deleted"};
     var requestType = '';
     var krajRegionData = '';
     var ajaxUrl = urlToRestApi;
-    frmElement = $("#modalKrajRegionAddEdit");
+    frmElement = $("#modalProduitAddEdit");
     if (type == 'add') {
         requestType = 'POST';
         krajRegionData = convertFormToJSON(frmElement.find('form'));
@@ -83,7 +83,7 @@ function krajRegionAction(type, id) {
     });
 }
 
-// Fill the krajRegion's data in the edit form
+// Fill the produit's data in the edit form
 function editKrajRegion(id) {
     $.ajax({
         type: 'GET',
@@ -91,29 +91,29 @@ function editKrajRegion(id) {
         dataType: 'JSON',
 //        data: 'action_type=data&id=' + id,
         success: function (data) {
-            $('#id').val(data.krajRegion.id);
-            $('#nazev').val(data.krajRegion.nazev);
-            $('#kod').val(data.krajRegion.kod);
+            $('#id').val(data.produit.id);
+            $('#actionPro').val(data.produit.actionPro);
+            $('#code').val(data.produit.code);
         }
     });
 }
 
 // Actions on modal show and hidden events
 $(function () {
-    $('#modalKrajRegionAddEdit').on('show.bs.modal', function (e) {
+    $('#modalProduitAddEdit').on('show.bs.modal', function (e) {
         var type = $(e.relatedTarget).attr('data-type');
-        var krajRegionFunc = "krajRegionAction('add');";
+        var krajRegionFunc = "produitAction('add');";
         $('.modal-title').html('Add new region (kraj)');
         if (type == 'edit') {
             var rowId = $(e.relatedTarget).attr('rowID');
-            krajRegionFunc = "krajRegionAction('edit')" + rowId + ");";
+            krajRegionFunc = "produitAction('edit')" + rowId + ");";
             $('.modal-title').html('Edit region (kraj)');
             editKrajRegion(rowId);
         }
         $('#krajRegionSubmit').attr("onclick", krajRegionFunc);
     });
 
-    $('#modalKrajRegionAddEdit').on('hidden.bs.modal', function () {
+    $('#modalProduitAddEdit').on('hidden.bs.modal', function () {
         $('#krajRegionSubmit').attr("onclick", "");
         $(this).find('form')[0].reset();
         $(this).find('.statusMsg').html('');

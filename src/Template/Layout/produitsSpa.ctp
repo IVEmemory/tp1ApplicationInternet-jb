@@ -57,9 +57,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <div class="top-bar-section">
 
                 <ul class="right">
-                    <li><?= $this->Html->link(__('Listes liées'), ['controller' => 'ObecCities', 'action' => 'add']) ?></li>
+                    <li><?= $this->Html->link(__('Listes liées'), ['controller' => 'EmplacementProduits', 'action' => 'add']) ?></li>
                     <li><?= $this->Html->link(__('Autocomplétion'), ['controller' => 'Tasks', 'action' => 'add']) ?></li>
-                    <li><?= $this->Html->link(__('Monopage'), ['controller' => 'KrajRegions', 'action' => 'index']) ?></li>                    <?php
+                    <li><?= $this->Html->link(__('Monopage'), ['controller' => 'Produits', 'action' => 'index']) ?></li>                    <?php
                     $loguser = $this->request->getSession()->read('Auth.User');
                     if ($loguser) :
                         ?>
