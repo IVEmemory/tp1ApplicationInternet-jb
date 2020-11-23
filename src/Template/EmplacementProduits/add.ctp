@@ -30,7 +30,7 @@ echo $this->Html->script('EmplacementProduits/add_edit', ['block' => 'scriptBott
         <legend><?= __('Ajouter une action (ex: lait)') ?></legend>
         <?php
             echo $this->Form->control('produit_id', ['options' => $produits]);
-            echo $this->Form->control('action_id', ['options' => $actions]);
+            echo $this->Form->control('action_id', ['options' => [__('Please select a product first')]]);
             echo $this->Form->control('code');
             echo $this->Form->control('actionPro');
         ?>

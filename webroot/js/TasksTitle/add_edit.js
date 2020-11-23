@@ -1,13 +1,13 @@
 $(document).ready(function () {
     // The path to action from CakePHP is in urlToLinkedListFilter 
-    $('#kraj-region-id').change(function () {
-        var krajRegionId = $(this).val();
-        if (krajRegionId) {
+    $('#produit-id').change(function () {
+        var produitId = $(this).val();
+        if (produitId) {
             $.ajax({
                 url: urlToLinkedListFilter,
-                data: 'produit_id=' + krajRegionId,
+                data: 'produit_id=' + produitId,
                 success: function (actions) {
-                    $select = $('#okres-county-id');
+                    $select = $('#action_id');
                     $select.find('option').remove();
                     $.each(actions, function (key, value)
                     {
@@ -18,7 +18,7 @@ $(document).ready(function () {
                 }
             });
         } else {
-            $('#okres-county-id').html('<option value="">Select KrajRegion first</option>');
+            $('#action_id').html('<option value="">Select Product first</option>');
         }
     }).change();
 });

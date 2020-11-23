@@ -393,7 +393,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `g
 --
 ALTER TABLE `actions`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `kraj_region_id` (`produit_id`);
+  ADD KEY `produit_id` (`produit_id`);
 
 --
 -- Index pour la table `comments`
@@ -409,7 +409,7 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `emplacementproduits`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `kraj_region_id` (`produit_id`),
+  ADD KEY `produit_id` (`produit_id`),
   ADD KEY `okres_county_id` (`action_id`);
 
 --

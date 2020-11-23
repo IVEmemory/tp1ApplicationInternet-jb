@@ -23,11 +23,11 @@
     <h3><?= h($emplacementProduit->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Kraj Region') ?></th>
+            <th scope="row"><?= __('Produit') ?></th>
             <td><?= $emplacementProduit->has('produit') ? $this->Html->link($emplacementProduit->produit->id, ['controller' => 'Produits', 'action' => 'view', $emplacementProduit->produit->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Okres County') ?></th>
+            <th scope="row"><?= __('Action') ?></th>
             <td><?= $emplacementProduit->has('action') ? $this->Html->link($emplacementProduit->action->id, ['controller' => 'Actions', 'action' => 'view', $emplacementProduit->action->id]) : '' ?></td>
         </tr>
         <tr>
