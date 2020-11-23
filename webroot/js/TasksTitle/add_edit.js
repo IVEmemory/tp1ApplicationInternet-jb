@@ -7,7 +7,7 @@ $(document).ready(function () {
                 url: urlToLinkedListFilter,
                 data: 'produit_id=' + produitId,
                 success: function (actions) {
-                    $select = $('#action_id');
+                    $select = $('#action-id');
                     $select.find('option').remove();
                     $.each(actions, function (key, value)
                     {
@@ -18,7 +18,7 @@ $(document).ready(function () {
                 }
             });
         } else {
-            $('#action_id').html('<option value="">Select Product first</option>');
+            $('#action-id').html('<option value="">Select Product first</option>');
         }
     }).change();
 });

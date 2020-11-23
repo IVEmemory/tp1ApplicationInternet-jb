@@ -6,7 +6,7 @@
         minLength: 1
         ,
         select: function (event, ui){
-            $("#obec-city-id" ).val(ui.item.value );
+            $("#emplacementProduit-id" ).val(ui.item.value );
             $("#autocomplete" ).val(ui.item.label );
             return false;
         }
