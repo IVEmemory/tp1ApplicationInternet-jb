@@ -71,7 +71,7 @@ class UsersController extends AppController {
      */
     public function view($id = null) {
         $user = $this->Users->get($id, [
-            'contain' => ['Articles'],
+            'contain' => ['Tasks'],
         ]);
 
         $this->set('user', $user);

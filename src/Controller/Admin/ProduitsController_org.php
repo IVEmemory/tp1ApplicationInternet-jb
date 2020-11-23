@@ -11,7 +11,7 @@ use App\Controller\AppController;
  *
  * @method \App\Model\Entity\KrajRegion[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class KrajRegionsController extends AppController {
+class ProduitsController extends AppController {
 
     public function initialize() {
         parent::initialize();
@@ -24,7 +24,7 @@ class KrajRegionsController extends AppController {
      * @return \Cake\Http\Response|null
      */
     public function index() {
-        $this->viewBuilder()->setLayout('krajRegionsSpa');
+        $this->viewBuilder()->setLayout('produitsSpa');
 //        $produits = $this->Produits->find('all');
         $produits = $this->paginate($this->Produits);
         $this->set(compact('produits'));

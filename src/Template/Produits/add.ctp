@@ -17,7 +17,7 @@
 <div class="produits form large-9 medium-8 columns content">
     <?= $this->Form->create($produit) ?>
     <fieldset>
-        <legend><?= __('Add Kraj Region') ?></legend>
+        <legend><?= __('Add Produit') ?></legend>
         <?php
             echo $this->Form->control('code');
             echo $this->Form->control('actionPro');

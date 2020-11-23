@@ -23,7 +23,7 @@ echo $this->Html->script('Produits/index', ['block' => 'scriptBottom']);
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody id="krajRegionData">
+                    <tbody id="produitData">
                         <?php if (!empty($produits)) {
                             foreach ($produits as $row) { ?>
                                 <tr>
@@ -60,7 +60,7 @@ echo $this->Html->script('Produits/index', ['block' => 'scriptBottom']);
                 <div class="modal-content">
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <h4 class="modal-title">Add new region (kraj)</h4>
+                        <h4 class="modal-title">Add new product</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
@@ -83,7 +83,7 @@ echo $this->Html->script('Produits/index', ['block' => 'scriptBottom']);
                     <!-- Modal Footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success" id="krajRegionSubmit">SUBMIT</button>
+                        <button type="button" class="btn btn-success" id="produitSubmit">SUBMIT</button>
                     </div>
                 </div>
             </div>

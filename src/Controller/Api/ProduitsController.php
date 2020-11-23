@@ -11,7 +11,7 @@ use App\Controller\Api\AppController;
  *
  * @method \App\Model\Entity\KrajRegion[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class KrajRegionsController extends AppController {
+class ProduitsController extends AppController {
 
     public function initialize()
     {

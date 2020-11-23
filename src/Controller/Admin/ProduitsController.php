@@ -11,7 +11,7 @@ use App\Controller\Admin\AppController;
  *
  * @method \App\Model\Entity\KrajRegion[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class KrajRegionsController extends AppController {
+class ProduitsController extends AppController {
 
     public function initialize() {
         parent::initialize();
@@ -54,11 +54,11 @@ class KrajRegionsController extends AppController {
         if ($this->request->is('post')) {
             $produit = $this->Produits->patchEntity($produit, $this->request->getData());
             if ($this->Produits->save($produit)) {
-                $this->Flash->success(__('The kraj region has been saved.'));
+                $this->Flash->success(__('The product has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The kraj region could not be saved. Please, try again.'));
+            $this->Flash->error(__('The product could not be saved. Please, try again.'));
         }
         $this->set(compact('produit'));
     }
@@ -77,11 +77,11 @@ class KrajRegionsController extends AppController {
         if ($this->request->is(['patch', 'post', 'put'])) {
             $produit = $this->Produits->patchEntity($produit, $this->request->getData());
             if ($this->Produits->save($produit)) {
-                $this->Flash->success(__('The kraj region has been saved.'));
+                $this->Flash->success(__('The product has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The kraj region could not be saved. Please, try again.'));
+            $this->Flash->error(__('The product could not be saved. Please, try again.'));
         }
         $this->set(compact('produit'));
     }
@@ -97,9 +97,9 @@ class KrajRegionsController extends AppController {
         $this->request->allowMethod(['post', 'delete']);
         $produit = $this->Produits->get($id);
         if ($this->Produits->delete($produit)) {
-            $this->Flash->success(__('The kraj region has been deleted.'));
+            $this->Flash->success(__('The product has been deleted.'));
         } else {
-            $this->Flash->error(__('The kraj region could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The product could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);

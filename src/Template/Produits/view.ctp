@@ -62,14 +62,14 @@
         <?php endif; ?>
     </div>
     <div class="related">
-        <h4><?= __('Related Okres Counties') ?></h4>
+        <h4><?= __('Related actions') ?></h4>
         <?php if (!empty($produit->actions)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Kraj Region Id') ?></th>
+                <th scope="col"><?= __('Produit Id') ?></th>
                 <th scope="col"><?= __('Code') ?></th>
-                <th scope="col"><?= __('Nazev') ?></th>
+                <th scope="col"><?= __('actionPro') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($produit->actions as $actions): ?>
