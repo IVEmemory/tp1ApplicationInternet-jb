@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 23 nov. 2020 à 13:37
+-- Généré le :  mar. 24 nov. 2020 à 18:31
 -- Version du serveur :  10.3.17-MariaDB
 -- Version de PHP :  7.3.9
 
@@ -352,9 +352,19 @@ INSERT INTO `tasks_tags` (`task_id`, `tag_id`) VALUES
 CREATE TABLE `tasks_title` (
   `id` int(11) NOT NULL,
   `tasks_title_id` int(11) NOT NULL,
-  `kod` varchar(11) NOT NULL,
+  `code` varchar(11) NOT NULL,
   `title` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `tasks_title`
+--
+
+INSERT INTO `tasks_title` (`id`, `tasks_title_id`, `code`, `title`) VALUES
+(1, 1, '1', 'Remplir le frigidaire de lait'),
+(2, 2, '2', 'Ceci est un test'),
+(3, 3, '3', 'Cette tâche est une tâche à faire le plus rapidement possible'),
+(4, 1, '4', 'Cette tâche contient le mot lait aussi');
 
 -- --------------------------------------------------------
 
@@ -393,7 +403,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `g
 --
 ALTER TABLE `actions`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `produit_id` (`produit_id`);
+  ADD KEY `kraj_region_id` (`produit_id`);
 
 --
 -- Index pour la table `comments`
@@ -409,7 +419,7 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `emplacementproduits`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `produit_id` (`produit_id`),
+  ADD KEY `kraj_region_id` (`produit_id`),
   ADD KEY `okres_county_id` (`action_id`);
 
 --
@@ -528,7 +538,7 @@ ALTER TABLE `i18n`
 -- AUTO_INCREMENT pour la table `produits`
 --
 ALTER TABLE `produits`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID kraj_regione', AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID kraj_regione', AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT pour la table `roles`
@@ -558,7 +568,7 @@ ALTER TABLE `tasks_files`
 -- AUTO_INCREMENT pour la table `tasks_title`
 --
 ALTER TABLE `tasks_title`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `users`
