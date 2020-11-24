@@ -7,14 +7,15 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Okres County'), ['action' => 'edit', $action->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Okres County'), ['action' => 'delete', $action->id], ['confirm' => __('Are you sure you want to delete # {0}?', $action->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Okres Counties'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Okres County'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Kraj Regions'), ['controller' => 'Produits', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Kraj Region'), ['controller' => 'Produits', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Obec Cities'), ['controller' => 'EmplacementProduits', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Obec City'), ['controller' => 'EmplacementProduits', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Edit action'), ['action' => 'edit', $action->id]) ?> </li>
+        <li><?= $this->Form->postLink(__('Delete action'), ['action' => 'delete', $action->id], ['confirm' => __('Are you sure you want to delete # {0}?', $action->id)]) ?> </li>
+        <li><?= $this->Html->link(__('List actions'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New action'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List produits'), ['controller' => 'Produits', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New produit'), ['controller' => 'Produits', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List emplacement produit'), ['controller' => 'EmplacementProduits', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New emplacemnt produit'), ['controller' => 'EmplacementProduits', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Liste de tâche 2.0'), ['controller' => 'Produits', 'action' => 'index']) ?> </li>
     </ul>
 </nav>
 <div class="actions view large-9 medium-8 columns content">

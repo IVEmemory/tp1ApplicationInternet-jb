@@ -21,6 +21,7 @@ echo $this->Html->script('Tasks/add_edit/emplacementProduitAutoComplete', ['bloc
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Photos'), ['controller' => 'Photos', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Photo'), ['controller' => 'Photos', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Liste de tâche 2.0'), ['controller' => 'Produits', 'action' => 'index']) ?> </li>
     </ul>
 </nav>
 <div class="tasks form large-9 medium-8 columns content">
