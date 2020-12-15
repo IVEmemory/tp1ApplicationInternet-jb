@@ -11,7 +11,7 @@ use Cake\ORM\Entity;
  * @property string $code
  * @property string $actionPro
  *
- * @property \App\Model\Entity\KrajRegion $produit
+ * @property \App\Model\Entity\Produit $produit
  * @property \App\Model\Entity\ObecCity[] $emplacementProduits
  */
 class OkresCounty extends Entity

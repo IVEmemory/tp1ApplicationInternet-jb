@@ -12,7 +12,7 @@ use Cake\ORM\Entity;
  * @property string $code
  * @property string $actionPro
  *
- * @property \App\Model\Entity\KrajRegion $produit
+ * @property \App\Model\Entity\Produit $produit
  * @property \App\Model\Entity\OkresCounty $action
  * @property \App\Model\Entity\Task[] $tasks
  */

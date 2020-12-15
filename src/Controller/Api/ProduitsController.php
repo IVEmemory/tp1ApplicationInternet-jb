@@ -7,9 +7,9 @@ use App\Controller\Api\AppController;
 /**
  * Produits Controller
  *
- * @property \App\Model\Table\KrajRegionsTable $Produits
+ * @property \App\Model\Table\ProduitsTable $Produits
  *
- * @method \App\Model\Entity\KrajRegion[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ * @method \App\Model\Entity\Produit[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class ProduitsController extends AppController {
 

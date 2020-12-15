@@ -6,16 +6,25 @@ use App\Controller\AppController;
 /**
  * Produit Controller
  *
- * @property \App\Model\Table\KrajRegionsTable $Produits
+ * @property \App\Model\Table\ProduitsTable $Produits
  *
- * @method \App\Model\Entity\KrajRegion[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ * @method \App\Model\Entity\Produit[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class ProduitsController extends AppController
 {
 
     public function initialize() {
         parent::initialize();
-        $this->Auth->allow(['getByProduit', 'add', 'edit', 'delete']);
+        $this->Auth->allow(['getByProduit', 'getProduits']);
+    }
+
+    public function getProduits() {
+        $produits = $this->Produits->find('all',
+                ['contain' => ['Actions']]);
+        $this->set([
+            'produits' => $produits,
+            '_serialize' => ['produits']
+        ]);
     }
 
     /**

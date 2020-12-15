@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 /**
  * EmplacementProduits Model
  *
- * @property \App\Model\Table\KrajRegionsTable&\Cake\ORM\Association\BelongsTo $Produits
+ * @property \App\Model\Table\ProduitsTable&\Cake\ORM\Association\BelongsTo $Produits
  * @property \App\Model\Table\OkresCountiesTable&\Cake\ORM\Association\BelongsTo $Actions
  * @property \App\Model\Table\TasksTable&\Cake\ORM\Association\HasMany $Tasks
  *

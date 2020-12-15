@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 24 nov. 2020 à 18:31
+-- Généré le :  mar. 15 déc. 2020 à 20:42
 -- Version du serveur :  10.3.17-MariaDB
 -- Version de PHP :  7.3.9
 
@@ -538,7 +538,7 @@ ALTER TABLE `i18n`
 -- AUTO_INCREMENT pour la table `produits`
 --
 ALTER TABLE `produits`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID kraj_regione', AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID kraj_regione', AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT pour la table `roles`

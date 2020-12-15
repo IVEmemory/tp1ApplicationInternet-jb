@@ -12,14 +12,14 @@ use Cake\Validation\Validator;
  * @property \App\Model\Table\ObecCitiesTable&\Cake\ORM\Association\HasMany $EmplacementProduits
  * @property \App\Model\Table\OkresCountiesTable&\Cake\ORM\Association\HasMany $Actions
  *
- * @method \App\Model\Entity\KrajRegion get($primaryKey, $options = [])
- * @method \App\Model\Entity\KrajRegion newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\KrajRegion[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\KrajRegion|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\KrajRegion saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\KrajRegion patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\KrajRegion[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\KrajRegion findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\Produit get($primaryKey, $options = [])
+ * @method \App\Model\Entity\Produit newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\Produit[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\Produit|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Produit saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Produit patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\Produit[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\Produit findOrCreate($search, callable $callback = null, $options = [])
  */
 class ProduitsTable extends Table
 {

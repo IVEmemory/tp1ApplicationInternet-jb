@@ -51,7 +51,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <nav class="top-bar expanded" data-topbar role="navigation">
             <ul class="title-area large-3 medium-4 columns">
                 <li class="name">
-                    <h1><?= $this->Html->link(__('CakePHP CMS Tuto') . ' v0.6.2', '/'); ?><?php // echo " - " . $this->fetch('title');          ?></h1>
+                    <h1><?= $this->Html->link(__('Pharmaprix') , '/'); ?><?php // echo " - " . $this->fetch('title');          ?></h1>
                 </li>
             </ul>
             <div class="top-bar-section">

@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Actions Model
  *
- * @property \App\Model\Table\KrajRegionsTable&\Cake\ORM\Association\BelongsTo $Produits
+ * @property \App\Model\Table\ProduitsTable&\Cake\ORM\Association\BelongsTo $Produits
  * @property \App\Model\Table\ObecCitiesTable&\Cake\ORM\Association\HasMany $EmplacementProduits
  *
  * @method \App\Model\Entity\OkresCounty get($primaryKey, $options = [])

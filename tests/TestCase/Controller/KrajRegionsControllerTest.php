@@ -1,16 +1,16 @@
 <?php
 namespace App\Test\TestCase\Controller;
 
-use App\Controller\KrajRegionsController;
+use App\Controller\ProduitsController;
 use Cake\TestSuite\IntegrationTestTrait;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Controller\KrajRegionsController Test Case
+ * App\Controller\ProduitsController Test Case
  *
- * @uses \App\Controller\KrajRegionsController
+ * @uses \App\Controller\ProduitsController
  */
-class KrajRegionsControllerTest extends TestCase
+class ProduitsControllerTest extends TestCase
 {
     use IntegrationTestTrait;
 

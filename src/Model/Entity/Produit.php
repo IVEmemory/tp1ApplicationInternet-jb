@@ -4,7 +4,7 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * KrajRegion Entity
+ * Produit Entity
  *
  * @property int $id
  * @property string $code

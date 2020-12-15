@@ -1,19 +1,19 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\KrajRegionsTable;
+use App\Model\Table\ProduitsTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\KrajRegionsTable Test Case
+ * App\Model\Table\ProduitsTable Test Case
  */
-class KrajRegionsTableTest extends TestCase
+class ProduitsTableTest extends TestCase
 {
     /**
      * Test subject
      *
-     * @var \App\Model\Table\KrajRegionsTable
+     * @var \App\Model\Table\ProduitsTable
      */
     public $Produits;
 
@@ -36,7 +36,7 @@ class KrajRegionsTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::getTableLocator()->exists('Produits') ? [] : ['className' => KrajRegionsTable::class];
+        $config = TableRegistry::getTableLocator()->exists('Produits') ? [] : ['className' => ProduitsTable::class];
         $this->Produits = TableRegistry::getTableLocator()->get('Produits', $config);
     }
 
