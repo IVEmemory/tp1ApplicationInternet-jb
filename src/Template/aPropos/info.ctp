@@ -1,6 +1,6 @@
 <?php
 /**
- * Bonne correction ! Fonctionnalité de l'appli 
+ * Bonne correction ! 
  * *************************************************Plus jolie sans side-menu pour cette page **************************************************
  * 
  */
@@ -20,9 +20,6 @@
 </nav>
 
 -->
-
-
-
 
 <div id="actions-sidebar">
     <h4><?= __(' Jessy Bérubé') ?></h4>
@@ -51,7 +48,8 @@
     <ul> Problème avec BootStrap rendant l'installation compliquer, déjà communiquer avec vous à ce propos. Pas implanter.</ul>
 
     <h1><?= __(' Consigne pour le Travail pratique 3') ?></h1>
-    <ul>À venir...</ul>
+    <ul><a href="http://localhost/tp1ApplicationInternet-jb/emplacement-produits/add">La partie 7.1 </a>est aussi une amilioration d'une partie du TP2, elle est beaucoup plus claire pour l'utilisateur avec le boitier griser</ul>
+    <ul><a href="http://localhost/tp1ApplicationInternet-jb/">La partie 7.2</a> permet d'afficher avec AngularJS une page semblable à l'autocomplétion du TP2.</ul>
 
 
     <h1><?= __(' Information utile') ?></h1>

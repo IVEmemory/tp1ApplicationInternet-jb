@@ -7,6 +7,7 @@ app.controller('ProduitCRUDCtrl', ['$scope', 'ProduitCRUDService', function ($sc
                     .then(function success(response) {
                         $scope.message = 'Produit data updated!';
                         $scope.errorMessage = '';
+                        $scope.getAllProduits();
                     },
                             function error(response) {
                                 $scope.errorMessage = 'Error updating produit!';
@@ -39,6 +40,7 @@ app.controller('ProduitCRUDCtrl', ['$scope', 'ProduitCRUDService', function ($sc
                         .then(function success(response) {
                             $scope.message = 'Produit added!';
                             $scope.errorMessage = '';
+                            $scope.getAllProduits();
                         },
                                 function error(response) {
                                     $scope.errorMessage = 'Error adding produit!';
@@ -56,6 +58,7 @@ app.controller('ProduitCRUDCtrl', ['$scope', 'ProduitCRUDService', function ($sc
                         $scope.message = 'Produit deleted!';
                         $scope.produit = null;
                         $scope.errorMessage = '';
+                        $scope.getAllProduits();
                     },
                             function error(response) {
                                 $scope.errorMessage = 'Error deleting produit!';

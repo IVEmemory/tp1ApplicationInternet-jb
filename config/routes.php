@@ -25,6 +25,9 @@ use Cake\Routing\Route\DashedRoute;
 Router::prefix('api', function ($routes) {
     $routes->setExtensions(['json', 'xml']);
     $routes->resources('Produits');
+    $routes->resources('Users');
+    Router::connect('/api/users/register', ['controller' => 'Users', 'action' => 'add', 'prefix' => 'api']);
+    $routes->fallbacks('InflectedRoute');
 });
 
 Router::prefix('admin', function (RouteBuilder $routes) {

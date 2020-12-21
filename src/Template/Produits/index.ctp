@@ -11,37 +11,52 @@ echo $this->Html->script('Produits/index', ['block' => 'scriptBottom']);
 ?>
 
 <div  ng-app="app" ng-controller="ProduitCRUDCtrl">
+    <input type="hidden" id="id" ng-model="produit.id" />
     <table>
         <tr>
-            <td width="100">ID:</td>
-            <td><input type="text" id="id" ng-model="produit.id" /></td>
-        </tr>
-        <tr>
-            <td width="100">Name (actionPro):</td>
+            <td width="150">Name (actionPro):</td>
             <td><input type="text" id="actionPro" ng-model="produit.actionPro" /></td>
         </tr>
         <tr>
-            <td width="100">Code (code):</td>
+            <td width="150">Code (code):</td>
             <td><input type="text" id="code" ng-model="produit.code" /></td>
         </tr>
     </table>
-    <br /> <br /> 
-    <a ng-click="getProduit(produit.id)">Get Produit</a> 
-    <a ng-click="updateProduit(produit.id, produit.actionPro, produit.code)">Update Produit</a> 
-    <a ng-click="addProduit(produit.actionPro, produit.code)">Add Produit</a> 
-    <a ng-click="deleteProduit(produit.id)">Delete Produit</a>
+    <button ng-click="updateProduit(produit)"> Mettre à jour le produit </button>
+    <button ng-click="addProduit(produit.actionPro, produit.code)">Ajouter Produit</button>
 
-    <br /> <br />
     <p style="color: green">{{message}}</p>
     <p style="color: red">{{errorMessage}}</p>
 
-    <br />
-    <br /> 
-    <a ng-click="getAllProduits()">Get all Produits</a><br /> 
-    <br /> <br />
-    <div ng-repeat="produit in produits">
-        {{produit.id}} {{produit.actionPro}} {{produit.code}}
-    </div>
-    <!-- pre ng-show='produits'>{{produits | json }}</pre-->
+    <table class="hoverable bordered">
+        <thead>
+            <tr>
+                <th class="text-align-center" ng-init="getAllProduits()"> id </th>
+                <th class="width-30-pct"> Name (actionPro) </th>
+                <th class="width-30-pct"> Code </th>
+            </tr>
+        </thead>
+
+        <tbody ng-init="getAll()">
+
+            <tr ng-repeat="produit in produits| filter:search">
+                <td class="text-align-center">
+                    {{produit.id}}
+                </td>
+                <td>
+                    {{produit.actionPro}}
+                </td>
+                <td>
+                    {{produit.code}}
+                </td>
+                <td>
+                    <button type="button" class="btn btn-warning btn-sm" ng-click="getProduit(produit.id)"> Edit</button>
+                    <button type="button" class="btn btn-danger btn-sm" ng-click="deleteProduit(produit.id)"> Delete</button>                  
+                </td>
+            </tr>
+        </tbody>
+
+
+    
 </div>
 
