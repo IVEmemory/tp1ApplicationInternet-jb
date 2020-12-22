@@ -50,6 +50,7 @@
     <h1><?= __(' Consigne pour le Travail pratique 3') ?></h1>
     <ul><a href="http://localhost/tp1ApplicationInternet-jb/emplacement-produits/add">La partie 7.1 </a>est aussi une amilioration d'une partie du TP2, elle est beaucoup plus claire pour l'utilisateur avec le boitier griser</ul>
     <ul><a href="http://localhost/tp1ApplicationInternet-jb/">La partie 7.2</a> permet d'afficher avec AngularJS une page semblable à l'autocomplétion du TP2.</ul>
+    <ul>Jeton JWS mis en place en partie </ul>
 
 
     <h1><?= __(' Information utile') ?></h1>
